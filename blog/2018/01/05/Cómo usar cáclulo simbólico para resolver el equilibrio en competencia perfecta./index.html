@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Maximiliano Greco">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <title>Microeconomía con Sympy: | mmngreco</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" title="mmngreco blog atom feed" href="/feeds/all.atom.xml" />
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
+        <style>.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+        <style>body {
+  margin: 0;
+  padding: 0;
+  font: 15px 'Source Sans Pro', sans-serif;
+  line-height: 1.6em;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #007EE5;
+  text-decoration: none;
+}
+a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+header.main-header {
+  background: none repeat scroll 0% 0% #205F29;
+  margin-bottom: 0px;
+}
+header.main-header a {
+  color: #fff;
+}
+header.main-header .container {
+  max-width: 1000px;
+}
+header.main-header .container nav a:hover {
+  background-color: #5C881C;
+}
+article {
+  margin: 0;
+}
+article header.about {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+article header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+article header h1 {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: #000;
+}
+article header time {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: right;
+}
+article header time.left {
+  color: #9E9E9E;
+  font-size: 0.85em;
+  float: left;
+}
+article div.social-links ul {
+  padding: 0px;
+}
+article div.social-links li {
+  display: inline;
+  font-size: 20px;
+}
+article div.social-links li a {
+  color: #000;
+  padding: 10px;
+}
+article div.social-links li a:hover {
+  color: #666;
+  text-decoration: none;
+}
+article p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+article p.note {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.533em 0.733em;
+}
+article p.update {
+  background-color: #FEEFB3;
+  border: 1px solid #e6e68a;
+  padding: 0.533em 0.733em;
+}
+article p.alert {
+  background-color: #ffe2e2;
+  border: 1px solid #ffb2b2;
+  padding: 0.533em 0.733em;
+}
+article ul,
+article ol {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+article li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+article a:hover {
+  text-decoration: underline;
+}
+article blockquote {
+  border-left: 2px solid #c7c7cc;
+  color: #666;
+  margin: 30px 0;
+  padding: 0 0 0 25px;
+}
+article img {
+  max-width: 100%;
+}
+article code {
+  color: #333;
+  background-color: #EEE;
+  border-radius: 0;
+  font-size: 13px;
+}
+article .meta {
+  font-size: 11px;
+}
+article .meta a:hover {
+  text-decoration: none;
+}
+article .meta div {
+  margin-bottom: 20px;
+  display: block;
+}
+article .meta a.tag {
+  margin: 0 10px 10px 0;
+  padding: 1px 12px;
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.05);
+}
+article .meta a.tag:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+article .meta a.read_more,
+article .meta a.comments_btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  color: #205F29;
+  background: #FFF;
+  border: 1px solid #205F29;
+}
+article .meta a.read_more:hover,
+article .meta a.comments_btn:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.index {
+  max-width: 700px;
+}
+.index article header h2 {
+  font-size: 36px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+.index article header h2 a {
+  color: #000;
+}
+.index article header h2 a:hover {
+  color: #007EE5;
+  text-decoration: none;
+}
+.index .separator {
+  padding: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  height: 10px;
+  border-bottom: solid 1px #CCC;
+}
+.index .pagination {
+  display: block;
+  margin-bottom: 100px;
+}
+.index .pagination .left {
+  text-align: right;
+}
+.index .pagination .right {
+  text-align: left;
+}
+.index .pagination a {
+  display: inline-block;
+  border: 2px solid #5C881C;
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-weight: bold;
+  color: #5C881C;
+}
+.index .pagination a:hover {
+  color: #FFF;
+  background: #5C881C;
+}
+.post {
+  max-width: 700px;
+}
+.post h2:before {
+  content: "# ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h3:before {
+  content: "## ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post h4:before {
+  content: "### ";
+  font-weight: bold;
+  color: #DDD;
+}
+.post article .meta {
+  margin: 50px 0 100px;
+}
+.list {
+  max-width: 700px;
+}
+.list ul.double-list {
+  margin: 0 auto 60px;
+  padding: 0;
+  list-style-type: none;
+}
+.list ul.double-list li {
+  padding: 5px 0;
+}
+.list ul.double-list li h2 {
+  font-size: 1em;
+  display: inline;
+  font-weight: normal;
+}
+.list ul.double-list li span {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  padding-top: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.full-width-content {
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }
+        }
+        init_mathjax();
+        </script>
+
+    </head>
+
+    <body>
+        <header class="navbar navbar-inverse bs-docs-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span> 
+		  </button>
+                  <a class="navbar-brand" href="/" title="Home" class="title">mmngreco</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="theNavbar">
+		    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/pages/about.html" title="About">About</a></li>
+                            <li><a href="/archives.html" title="Archive">Archive</a></li>
+                            <li><a class="nodec icon-rss" href="/feeds/all.atom.xml" title="jakevdp.github.io RSS feed" rel="me"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="wrap">
+<div class="container post">
+    <article>
+        <header>
+            <h1>Microeconomía con Sympy:</h1>
+            <time datetime="article.date.isoformat()" pubdate>vie 05 enero 2018</time>
+        </header>
+
+        <div class="article_content">
+            
+
+<p>Después de mucho tiempo sin escribir, he decidido retomar la divulgación con algo que me parece muy útil, sobre todo durante la carrera me sirvió de gran ayuda, me refiero al cálculo simbólico en Python!</p>
+<p>Concretamente, en este post resuelvo un ejercicio muy común en Microeconomía, un mercado en competencia perfecta con varios sectores.
+</p>
+<style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.html</span> <span class="k">import</span> <span class="n">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.html.widgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">YouTubeVideo</span><span class="p">,</span> <span class="n">ScribdDocument</span><span class="p">,</span> <span class="n">Latex</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="MERCADO-MUNDIAL-COMPETITIVO:">MERCADO MUNDIAL COMPETITIVO:<a class="anchor-link" href="#MERCADO-MUNDIAL-COMPETITIVO:">&#182;</a></h1><p>Supongamos un mercado mundial mundial competitivo <em>[1]</em>, por un lado tenemos la oferta de cada una de la empresas que forman el mercado y por otro la demanda.</p>
+<h2 id="La-Oferta">La Oferta<a class="anchor-link" href="#La-Oferta">&#182;</a></h2><p>Tenemos 3 países o sectores, las N empresas de cada país tienen una curva de costes cómo muestra la tabla.</p>
+<table>
+<thead><tr>
+<th style="text-align:center">País</th>
+<th style="text-align:center">N empresas</th>
+<th style="text-align:center">Costes unitarios $C(q_i)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">$= \frac{q_a^2}{2} + 2q_a + 10$</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">$= \frac{q_b^2}{10} + 3q_b + 12$</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">$= \frac{q_c^2}{2} + 2$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="La-Demanda">La Demanda<a class="anchor-link" href="#La-Demanda">&#182;</a></h2><p>Los consumidores tienen una demanda que depende del precio, y se refleja en la siguiente expresión:</p>
+<p>\begin{equation}
+Q^D = 98650 - 19350 P
+\end{equation}</p>
+<h2 id="Se-pide">Se pide<a class="anchor-link" href="#Se-pide">&#182;</a></h2><p>Hallar:</p>
+<ul>
+<li>Las cantidades producidas ($q_i$)</li>
+<li>Beneficios ($\pi_i$)</li>
+<li>Precio de Equilibrio ($p$)</li>
+</ul>
+<p><em>[1]: Esto implica que los productores son precio-aceptantes, es decir, que el precio es una variable exógena para los productores.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Se crean las variables necesarias</span>
+<span class="n">qa</span><span class="p">,</span> <span class="n">qb</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">Qd</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q_a q_b q_c q Q^d P p_i Q&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="COSTES">COSTES<a class="anchor-link" href="#COSTES">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costes_a</span> <span class="o">=</span> <span class="n">qa</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">qa</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="n">costes_a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{q_{a}^{2}}{6} + 2 q_{a} + 10$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costes_b</span> <span class="o">=</span> <span class="n">qb</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">qb</span> <span class="o">+</span> <span class="mi">12</span>
+<span class="n">costes_b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{q_{b}^{2}}{10} + 3 q_{b} + 12$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costes_c</span> <span class="o">=</span> <span class="n">qc</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">costes_c</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{q_{c}^{2}}{2} + 2$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DEMANDA">DEMANDA<a class="anchor-link" href="#DEMANDA">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_dda</span> <span class="o">=</span> <span class="mi">98650</span> <span class="o">-</span> <span class="mi">19350</span> <span class="o">*</span> <span class="n">P</span>
+<span class="n">q_dda</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$- 19350 P + 98650$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_dda</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">q_dda</span><span class="p">),</span> <span class="n">P</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">p_dda</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$- \frac{Q}{19350} + \frac{1973}{387}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="OFERTA">OFERTA<a class="anchor-link" href="#OFERTA">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_oferta</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">qa</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">qb</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">qc</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dados los costes, necesitamos calcular los costes marginales, para eso derivamos la curva de costes de cada tipo empresa usando el método <code>diff()</code>.</p>
+<p>Por ejemplo la derivada de los costes de la empresa del país A son:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costes_a</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">qa</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{q_{a}}{3} + 2$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">coste_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">costes_a</span><span class="p">,</span> <span class="n">costes_b</span><span class="p">,</span> <span class="n">costes_c</span><span class="p">]</span>
+<span class="n">q_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">qa</span><span class="p">,</span> <span class="n">qb</span><span class="p">,</span> <span class="n">qc</span><span class="p">]</span>
+<span class="n">pais_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">coste_marginal_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coste_list</span><span class="p">)):</span>
+    <span class="c1"># creamos las variables coste_marginal de cada país</span>
+    <span class="c1"># como la derivada de sus costes respecto de q.</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;coste_marginal_</span><span class="si">%s</span><span class="s1">&#39;</span>
+    <span class="n">cmg_i</span> <span class="o">=</span> <span class="n">coste_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">q_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">globals</span><span class="p">()[</span><span class="n">fmt</span> <span class="o">%</span> <span class="n">pais_list</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">cmg_i</span>
+    <span class="n">coste_marginal_list</span> <span class="o">+=</span> <span class="p">[</span><span class="n">cmg_i</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lista de costes marginales:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">coste_marginal_list</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left [ \frac{q_{a}}{3} + 2, \quad \frac{q_{b}}{5} + 3, \quad q_{c}\right ]$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Para hallar la cantidad que se intercambiará en el equilibrio tenemos que igualar los costes marginales y el precio, ¿por qué? si no lo sabes, deja leer y repasa la teoría. Para esto vamos a usar la función para igualar dos expresiones <code>Eq()</code>. Para resulver la igualdad tenemos que usar <code>solve()</code> y por último necesitaremos sustituir el valor de <code>P</code> en la oferta para tener la cantidad:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">precio_igual_cmg_a</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">coste_marginal_a</span><span class="p">)</span>
+<span class="n">precio_igual_cmg_a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$P = \frac{q_{a}}{3} + 2$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">solucion_a</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">precio_igual_cmg_a</span><span class="p">,</span> <span class="n">qa</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">solucion_a</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$3 P - 6$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_oferta_parcial</span> <span class="o">=</span> <span class="n">q_oferta</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">qa</span><span class="p">,</span> <span class="n">solucion_a</span><span class="p">)</span>
+<span class="n">q_oferta_parcial</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$300 P + 50 q_{b} + 100 q_{c} - 600$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">precio_igual_cmg_b</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">coste_marginal_b</span><span class="p">)</span>
+<span class="n">precio_igual_cmg_b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$P = \frac{q_{b}}{5} + 3$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">solucion_b</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">precio_igual_cmg_b</span><span class="p">,</span> <span class="n">qb</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">solucion_b</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$5 P - 15$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_oferta_parcial</span> <span class="o">=</span> <span class="n">q_oferta_parcial</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">qb</span><span class="p">,</span> <span class="n">solucion_b</span><span class="p">)</span>
+<span class="n">q_oferta_parcial</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$550 P + 100 q_{c} - 1350$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">precio_igual_cmg_c</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">coste_marginal_c</span><span class="p">)</span>
+<span class="n">precio_igual_cmg_c</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$P = q_{c}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">solucion_c</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">precio_igual_cmg_c</span><span class="p">,</span> <span class="n">qc</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">solucion_c</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$P$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_oferta_parcial</span> <span class="o">=</span> <span class="n">q_oferta_parcial</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">solucion_c</span><span class="p">)</span>
+<span class="n">q_oferta_parcial</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$650 P - 1350$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># alternativamente lo podemos hacer de forma recursiva con un bucle</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coste_list</span><span class="p">)):</span>
+    <span class="n">q_oferta</span> <span class="o">=</span> <span class="n">q_oferta</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">vi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">coste_marginal_i</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">vi</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">q_oferta</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>650*P - 1350
+650*P - 1350
+650*P - 1350
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_oferta_final</span> <span class="o">=</span> <span class="n">q_oferta_parcial</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_oferta_final</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$650 P - 1350$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">precio_equilibrio</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">q_dda</span><span class="p">,</span> <span class="n">q_oferta_final</span><span class="p">),</span> <span class="n">P</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">precio_equilibrio</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$5$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">q_equilibrio</span> <span class="o">=</span> <span class="n">q_oferta_final</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">precio_equilibrio</span><span class="p">)</span>
+<span class="n">q_equilibrio</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$1900$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="RESUMEN-DE-VARIABLES-EN-EL-EQUILIBRIO">RESUMEN DE VARIABLES EN EL EQUILIBRIO<a class="anchor-link" href="#RESUMEN-DE-VARIABLES-EN-EL-EQUILIBRIO">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_empresas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">q_i</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Q_i</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">b_i</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">n_i</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">table_fmt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">|Variables \ Sector       | a | b | c |</span>
+<span class="s2">|:--    |--:|--:|--:|</span>
+<span class="s2">|$q =$  |</span><span class="si">{q_i}</span><span class="s2">|</span>
+<span class="s2">|$Q =$  |</span><span class="si">{Q_i}</span><span class="s2">|</span>
+<span class="s2">|$\pi =$|</span><span class="si">{b_i}</span><span class="s2">|</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">qi</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">precio_equilibrio</span><span class="p">,</span> <span class="n">coste_marginal_list</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">q_list</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">p_igual_cmg</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">precio_equilibrio</span><span class="p">,</span> <span class="n">coste_marginal_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">precio_equilibrio</span> <span class="o">*</span> <span class="n">solve</span><span class="p">(</span><span class="n">p_igual_cmg</span><span class="p">,</span> <span class="n">q_list</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">coste_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">qi</span><span class="p">)</span>
+    <span class="n">q_i</span> <span class="o">+=</span> <span class="p">[</span><span class="n">qi</span><span class="p">]</span>
+    <span class="n">Q_i</span> <span class="o">+=</span> <span class="p">[</span><span class="n">qi</span><span class="o">*</span><span class="n">n_empresas</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">b_i</span> <span class="o">+=</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span>
+    <span class="n">Markdown</span><span class="p">(</span>
+        <span class="n">table_fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">q_i</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">q_i</span><span class="p">)),</span> 
+            <span class="n">Q_i</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">Q_i</span><span class="p">)),</span> 
+            <span class="n">b_i</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">b_i</span><span class="p">)))</span>
+    <span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<table>
+<thead><tr>
+<th style="text-align:left">Variables \ Sector</th>
+<th style="text-align:right">a</th>
+<th style="text-align:right">b</th>
+<th style="text-align:right">c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$q =$</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left">$Q =$</td>
+<td style="text-align:right">900</td>
+<td style="text-align:right">500</td>
+<td style="text-align:right">500</td>
+</tr>
+<tr>
+<td style="text-align:left">$\pi =$</td>
+<td style="text-align:right">7/2</td>
+<td style="text-align:right">-2</td>
+<td style="text-align:right">21/2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Despejamos el precio de la oferta para tener la función inversa de demanda:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_oferta</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">q_oferta_final</span><span class="p">),</span> <span class="n">P</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">p_oferta</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{Q}{650} + \frac{27}{13}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_dda</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[43]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$- \frac{Q}{19350} + \frac{1973}{387}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">p_dda</span><span class="p">,</span> <span class="n">p_oferta</span><span class="p">,</span> <span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">q_equilibrio</span><span class="o">*</span><span class="mf">1.2</span><span class="p">));</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+        </div>
+
+        <div class="meta">
+            <div>
+                    <a href="http://mmngreco.github.io/tag/microeconomia.html" class="tag">microeconomía</a>
+                    <a href="http://mmngreco.github.io/tag/sympy.html" class="tag">sympy</a>
+                    <a href="http://mmngreco.github.io/tag/equilibrio.html" class="tag">equilibrio</a>
+            </div>
+        </div>
+    </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'mmngreco';
+      var disqus_identifier = '/blog/2018/01/05/Cómo usar cáclulo simbólico para resolver el equilibrio en competencia perfecta./';
+      var disqus_url = 'http://mmngreco.github.io/blog/2018/01/05/Cómo usar cáclulo simbólico para resolver el equilibrio en competencia perfecta./';
+      var disqus_title = 'Microeconomía con Sympy:';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </section>
+
+</div>
+
+<style type="text/css">
+{
+    max-width: 700px;
+}
+
+.text_cell .prompt {
+    display: none;
+}
+
+div.cell {
+    padding: 0;
+}
+
+div.text_cell_render {
+    padding: 0;
+}
+
+div.prompt {
+    font-size: 13px;
+}
+
+div.input_prompt {
+    padding: .7em 0.2em;
+}
+
+div.output_prompt {
+    padding: .4em .2em;
+}
+
+div.input_area {
+    margin: .2em 0.4em;
+    max-width: 580px;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+pre code {
+    background-color: inherit;
+}</style>
+
+        </div>
+<!--
+    <footer>
+      <p>
+        © 2012-2017 Maximiliano Greco, license <a href="https://github.com/mmngreco/mmngreco.github.io-source/blob/master/LICENSE"> </a>
+        unless otherwise noted.
+        Generated by <a href= "http://docs.getpelican.com/">Pelican</a>.
+      </p>
+    </footer>
+-->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34061646-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34061646-1');
+    ga('send', 'pageview');
+</script>
+    </body>
+</html>
