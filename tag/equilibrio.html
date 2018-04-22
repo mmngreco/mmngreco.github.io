@@ -380,23 +380,25 @@ article .meta a.comments_btn:hover {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-                processEscapes: true,
-                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+        <script type="text/javascript">
+        init_mathjax = function() {
+            if (window.MathJax) {
+                // MathJax loaded
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                    },
+                    displayAlign: 'left', // Change this to 'center' to center equations.
+                    "HTML-CSS": {
+                        styles: {'.MathJax_Display': {"margin": 0}}
+                    }
+                });
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
             }
-        });
-        MathJax.Hub.Queue(function() {
-            var all = MathJax.Hub.getAllJax(), i;
-            for(i=0; i < all.length; i += 1) {
-                all[i].SourceElement().parentNode.className += ' has-jax';
-            }
-        });
-        </script>
-
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        }
+        init_mathjax();
         </script>
 
     </head>
@@ -408,7 +410,7 @@ article .meta a.comments_btn:hover {
 		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar">
 		    <span class="icon-bar"></span>
 		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span> 
 		  </button>
                   <a class="navbar-brand" href="/" title="Home" class="title">mmngreco</a>
                 </div>
