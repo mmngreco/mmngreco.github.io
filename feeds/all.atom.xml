@@ -1022,6 +1022,7 @@ h6:hover .anchor-link {
 
 
 &lt;h1 id="MERCADO-MUNDIAL-COMPETITIVO:"&gt;MERCADO MUNDIAL COMPETITIVO:&lt;a class="anchor-link" href="#MERCADO-MUNDIAL-COMPETITIVO:"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Supongamos un mercado mundial mundial competitivo &lt;em&gt;[1]&lt;/em&gt;, por un lado tenemos la oferta de cada una de la empresas que forman el mercado y por otro la demanda.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;[1]: Esto implica que los productores son precio-aceptantes, es decir, que el precio es una variable exógena para los productores.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id="La-Oferta"&gt;La Oferta&lt;a class="anchor-link" href="#La-Oferta"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Supongamos que la oferta está formada por 3 empresas países o sectores distintos, las N empresas de cada país tienen una curva de costes como muestra la tabla.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
@@ -1048,25 +1049,24 @@ h6:hover .anchor-link {
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-
-
-
-
-
-
-
 &lt;h2 id="La-Demanda"&gt;La Demanda&lt;a class="anchor-link" href="#La-Demanda"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Por otra parte, la demanda formada por los consumidores, tienen una demanda que depende del precio, y que queda representada con la siguiente expresión:&lt;/p&gt;
 &lt;p&gt;\begin{equation}
 Q^D = 98650 - 19350 P
 \end{equation}&lt;/p&gt;
+
+
+
+
+
+
+
+
 &lt;h2 id="Se-pide"&gt;Se pide&lt;a class="anchor-link" href="#Se-pide"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;En un ejercicio típico nos suelen pedir hallar:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Las cantidades producidas ($q_i$) de cada país/sector.&lt;/li&gt;
 &lt;li&gt;Beneficios ($\pi_i$)&lt;/li&gt;
 &lt;li&gt;Precio de Equilibrio ($p$)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;[1]: Esto implica que los productores son precio-aceptantes, es decir, que el precio es una variable exógena para los productores.&lt;/em&gt;&lt;/p&gt;
 
 
 
