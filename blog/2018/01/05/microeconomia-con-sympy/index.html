@@ -1412,10 +1412,10 @@ h6:hover .anchor-link {
 
 
 <h1 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h1><p>Después de mucho tiempo sin escribir, he decidido retomar la divulgación con algo que me parece muy útil, sobre todo durante la carrera me sirvió de gran ayuda, me refiero al cálculo simbólico en Python!</p>
-<p>Concretamente, en este post resuelvo un ejercicio muy común en Microeconomía, un mercado en competencia perfecta con varios sectores.</p>
-<h1 id="Mercado-Mundial-Competitivo">Mercado Mundial Competitivo<a class="anchor-link" href="#Mercado-Mundial-Competitivo">&#182;</a></h1><p>Supongamos un mercado mundial mundial competitivo <em>[1]</em>, por un lado tenemos la oferta de cada una de la empresas que forman el mercado y por otro la demanda.</p>
+<p>Concretamente, en este post resuelvo un ejercicio muy común en Microeconomía, un mercado en competencia perfecta con varios paises con diferentes tecnologías (costes).</p>
+<h1 id="Mercado-Mundial-Competitivo">Mercado Mundial Competitivo<a class="anchor-link" href="#Mercado-Mundial-Competitivo">&#182;</a></h1><p>Supongamos un mercado mundial competitivo <em>[1]</em>, por un lado tenemos la oferta de cada una de la empresas que forman el mercado de cada país y por otro la demanda mundial.</p>
 <p><em>[1]: Esto implica que los productores son precio-aceptantes, es decir, que el precio es una variable exógena para los productores.</em></p>
-<h2 id="La-Oferta">La Oferta<a class="anchor-link" href="#La-Oferta">&#182;</a></h2><p>Supongamos que la oferta está formada por 3 empresas países o sectores distintos, las N empresas de cada país tienen una curva de costes como muestra la tabla.</p>
+<h2 id="La-Oferta">La Oferta<a class="anchor-link" href="#La-Oferta">&#182;</a></h2><p>Supongamos que la oferta está formada por 3 países con tecnologías diferentes, en cada país hay $N$ empresas cuya tecnología está definida por su curva de costes, como muestra la tabla.</p>
 <table>
 <thead><tr>
 <th style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;País&nbsp;&nbsp;&nbsp;&nbsp;</th>
@@ -1441,7 +1441,7 @@ h6:hover .anchor-link {
 </tr>
 </tbody>
 </table>
-<h2 id="La-Demanda">La Demanda<a class="anchor-link" href="#La-Demanda">&#182;</a></h2><p>Por otra parte, la demanda formada por los consumidores, tienen una demanda que depende del precio, y que queda representada con la siguiente expresión:</p>
+<h2 id="La-Demanda">La Demanda<a class="anchor-link" href="#La-Demanda">&#182;</a></h2><p>Por otra parte, los consumidores tienen una única demanda mundial y queda representada con la siguiente expresión:</p>
 <p>\begin{equation}
 Q^D = 98650 - 19350 P
 \end{equation}</p>
@@ -1455,7 +1455,7 @@ Q^D = 98650 - 19350 P
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Se-pide">Se pide<a class="anchor-link" href="#Se-pide">&#182;</a></h2><p>En un ejercicio típico nos suelen pedir hallar:</p>
 <ul>
-<li>Las cantidades producidas ($q_i$) de cada país/sector.</li>
+<li>Las cantidades producidas ($q_i$) de la empresa de cada país.</li>
 <li>Beneficios ($\pi_i$)</li>
 <li>Precio de Equilibrio ($p$)</li>
 </ul>
@@ -1778,8 +1778,8 @@ $$100 q_{a} + 50 q_{b} + 100 q_{c}$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Resoluci&#243;n">Resoluci&#243;n<a class="anchor-link" href="#Resoluci&#243;n">&#182;</a></h2><p>Una vez definidas todas las funciones ya podemos empezar a resolver el problema aplicando la teoría económica y un poco de programación.</p>
-<p>Bien, a partir de los costes podemos calcular los costes marginales, como las empresas son precio-aceptantes $P=C'$. Para esto tenemos que calcular la primera derivada de la curva de costes de cada tipo empresa, lo hacemos usando el método <code>diff()</code> de las expresiones de los costes.</p>
-<p>Por ejemplo la derivada de los costes de la empresa del país A son:</p>
+<p>Bien, a partir de los costes podemos calcular los costes marginales, como las empresas son precio-aceptantes se cumple que $P=C'$. Para esto tenemos que calcular la primera derivada de la curva de costes de cada tipo empresa, lo hacemos usando el método <code>diff()</code> de las expresiones de los costes.</p>
+<p>Por ejemplo, la derivada de los costes de las empresas del país A son:</p>
 
 </div>
 </div>
@@ -1962,7 +1962,7 @@ $$\left [ \frac{q_{a}}{3} + 2, \quad \frac{q_{b}}{5} + 3, \quad q_{c}\right ]$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En este punto ya tenemos los costes marginales, lo usaremos para hallar la cantidad que se intercambiará en el equilibrio. Para ello tenemos que igualar los costes marginales y el precio. Para esto vamos a usar una función que nos permite igualar dos expresiones <code>Eq()</code>. Con la igualdad podremos despejar la variable que nos interesa ($P$). Para resolver una equación usaremos <code>solve()</code> y por último necesitaremos sustituir el valor de <code>P</code> en la oferta para tener la cantidad. Iremos por partes, primero igualamos $P = C'_a$</p>
+<p>En este punto ya tenemos los costes marginales de la empresas de cada país, lo usaremos para hallar la cantidad que se intercambiará en el equilibrio. Para ello tenemos que igualar los costes marginales y el precio. Para esto vamos a usar una función que nos permite igualar dos expresiones <code>Eq()</code>. Con la igualdad podremos despejar la variable que nos interesa ($P$). Para resolver una equación usaremos <code>solve()</code> y por último necesitaremos sustituir el valor de <code>P</code> en la oferta para tener la cantidad. Iremos por partes, primero igualamos $P = C'_a$</p>
 
 </div>
 </div>
@@ -2585,12 +2585,12 @@ $$1900$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Beneficio">Beneficio<a class="anchor-link" href="#Beneficio">&#182;</a></h2><p>El beneficio de empresa $_i$ se puede calcular cómo</p>
+<h2 id="Beneficio">Beneficio<a class="anchor-link" href="#Beneficio">&#182;</a></h2><p>El beneficio de empresa del país $_i$ se puede calcular cómo</p>
 <p>\begin{equation}
 \pi_i = IT - CT\\
 \pi_i = p*q_i - c_i(q_i)
 \end{equation}</p>
-<p>Necesitamos conocer $q_i$, pero hemos dicho que las empresas son precio-aceptantes, por lo que podemos sustituir el precio que ahora conocemos en la función de coste marignal y obtener las cantidades que produce cada empresa.</p>
+<p>Necesitamos conocer la cantidad que produce individualmente cada empresa $q_i$, pero hemos dicho que las empresas son precio-aceptantes, por lo que podemos sustituir el precio que ahora conocemos en la función de coste marignal y obtener las cantidades que produce cada empresa.</p>
 
 </div>
 </div>
@@ -2667,7 +2667,7 @@ $$9$$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>El beneficio de la empresa $_a$:</p>
+<p>El beneficio de las empresas del país $_a$:</p>
 
 </div>
 </div>
