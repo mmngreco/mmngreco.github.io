@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>mmngreco</title><link href="https://mmngreco.github.io/" rel="alternate"></link><link href="https://mmngreco.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mmngreco.github.io/</id><updated>2018-01-05T11:19:00+00:00</updated><entry><title>Microeconomía con Sympy:</title><link href="https://mmngreco.github.io/blog/2018/01/05/microeconomia-con-sympy/" rel="alternate"></link><published>2018-01-05T11:19:00+00:00</published><updated>2018-01-05T11:19:00+00:00</updated><author><name>Maximiliano Greco</name></author><id>tag:mmngreco.github.io,2018-01-05:blog/2018/01/05/microeconomia-con-sympy/</id><summary type="html">
-Después de mucho tiempo sin escribir, he decidido retomar la divulgación con algo que me parece muy útil, sobre todo durante la carrera me sirvió de gran ayuda, me refiero al cálculo simbólico en Python!
 
-Concretamente, en este post resuelvo un ejercicio muy común en Microeconomía, un mercado en competencia perfecta con varios sectores.
-
+&lt;h1 id="Introducci&amp;#243;n"&gt;Introducci&amp;#243;n&lt;a class="anchor-link" href="#Introducci&amp;#243;n"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Después de mucho tiempo sin escribir, he decidido retomar la divulgación con algo que me parece muy útil, sobre todo durante la carrera me sirvió de gran ayuda, me refiero al cálculo simbólico en Python!&lt;/p&gt;
+&lt;p&gt;Concretamente, en este post resuelvo un ejercicio muy común en Microeconomía, un mercado en competencia perfecta con varios sectores.&lt;/p&gt;
+&lt;h1 id="Mercado-Mundial-Competitivo"&gt;Mercado Mundial Competitivo&lt;a class="anchor-link" href="#Mercado-Mundial-Competitivo"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Supongamos un mercado mundial mundial competitivo &lt;em&gt;[1]&lt;/em&gt;, por un lado tenemos la oferta de cada una de la empresas que forman el mercado y por otro la demanda.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;[1]: Esto implica que los productores son precio-aceptantes, es decir, que el precio es una variable exógena para los productores.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id="La-Oferta"&gt;La Oferta&lt;a class="anchor-link" href="#La-Oferta"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Supongamos que la oferta está formada por 3 empresas países o sectores distintos, las N empresas de cada país tienen una curva de costes como muestra la tabla.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:center"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;País&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/th&gt;
+&lt;th style="text-align:center"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;N empresas&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/th&gt;
+&lt;th style="text-align:center"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Costes unitarios $C(q_i)$&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;A&lt;/td&gt;
+&lt;td style="text-align:center"&gt;100&lt;/td&gt;
+&lt;td style="text-align:center"&gt;$= \frac{q_a^2}{2} + 2q_a + 10$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;B&lt;/td&gt;
+&lt;td style="text-align:center"&gt;50&lt;/td&gt;
+&lt;td style="text-align:center"&gt;$= \frac{q_b^2}{10} + 3q_b + 12$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;C&lt;/td&gt;
+&lt;td style="text-align:center"&gt;100&lt;/td&gt;
+&lt;td style="text-align:center"&gt;$= \frac{q_c^2}{2} + 2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="La-Demanda"&gt;La Demanda&lt;a class="anchor-link" href="#La-Demanda"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Por otra parte, la demanda formada por los consumidores, tienen una demanda que depende del precio, y que queda representada con la siguiente expresión:&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+Q^D = 98650 - 19350 P
+\end{equation}&lt;/p&gt;
 </summary><category term="microeconomía"></category><category term="sympy"></category><category term="equilibrio"></category></entry></feed>
