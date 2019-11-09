@@ -6,7 +6,7 @@
         <meta name="author" content="Maximiliano Greco">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Home | mmngreco</title>
+        <title>mmngreco - articles category | mmngreco</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -429,48 +429,94 @@ article .meta a.comments_btn:hover {
 
   <article>
     <header>
+      <h2><a href="https://mmngreco.github.io/blog/2019/11/09/microeconomia-con-sympy/">Hotelling</a></h2>
+      <time datetime="" title="2019-11-09T00:00:00+01:00" pubdate>sáb 09 noviembre 2019</time>
+    </header>
+
+    <div class="article_content">
+      <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color …</style>
+    </div>
+
+    <div class="meta">
+      <div>
+        <a href="https://mmngreco.github.io/blog/2019/11/09/microeconomia-con-sympy/" class="read_more">Read more &#8594;</a>
+      </div>
+
+      <div>
+            <a href="https://mmngreco.github.io/tag/microeconomia.html" class="tag">microeconomía</a>
+            <a href="https://mmngreco.github.io/tag/sympy.html" class="tag">sympy</a>
+            <a href="https://mmngreco.github.io/tag/equilibrio.html" class="tag">equilibrio</a>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="separator"></div>
+  <article>
+    <header>
       <h2><a href="https://mmngreco.github.io/blog/2018/01/05/microeconomia-con-sympy/">Microeconomía con Sympy:</a></h2>
       <time datetime="" title="2018-01-05T11:19:00+00:00" pubdate>vie 05 enero 2018</time>
     </header>
 
     <div class="article_content">
-      
-
-<h1 id="Introducci&#243;n">Introducci&#243;n<a class="anchor-link" href="#Introducci&#243;n">&#182;</a></h1><p>Después de mucho tiempo sin escribir, he decidido retomar la divulgación con algo que me parece muy útil, sobre todo durante la carrera me sirvió de gran ayuda, me refiero al cálculo simbólico en Python!</p>
-<p>Concretamente, en este post resuelvo un ejercicio muy común en Microeconomía, un mercado en competencia perfecta con varios paises con diferentes tecnologías (costes).</p>
-<h1 id="Mercado-Mundial-Competitivo">Mercado Mundial Competitivo<a class="anchor-link" href="#Mercado-Mundial-Competitivo">&#182;</a></h1><p>Supongamos un mercado mundial competitivo <em>[1]</em>, por un lado tenemos la oferta de cada una de la empresas que forman el mercado de cada país y por otro la demanda mundial.</p>
-<p><em>[1]: Esto implica que los productores son precio-aceptantes, es decir, que el precio es una variable exógena para los productores.</em></p>
-<h2 id="La-Oferta">La Oferta<a class="anchor-link" href="#La-Oferta">&#182;</a></h2><p>Supongamos que la oferta está formada por 3 países con tecnologías diferentes, en cada país hay $N$ empresas cuya tecnología está definida por su curva de costes, como muestra la tabla.</p>
-<table>
-<thead><tr>
-<th style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;País&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;N empresas&nbsp;&nbsp;&nbsp;&nbsp;</th>
-<th style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;Costes unitarios $C(q_i)$&nbsp;&nbsp;&nbsp;&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">100</td>
-<td style="text-align:center">$= \frac{q_a^2}{2} + 2q_a + 10$</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">50</td>
-<td style="text-align:center">$= \frac{q_b^2}{10} + 3q_b + 12$</td>
-</tr>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">100</td>
-<td style="text-align:center">$= \frac{q_c^2}{2} + 2$</td>
-</tr>
-</tbody>
-</table>
-<h2 id="La-Demanda">La Demanda<a class="anchor-link" href="#La-Demanda">&#182;</a></h2><p>Por otra parte, los consumidores tienen una única demanda mundial y queda representada con la siguiente expresión:</p>
-<p>\begin{equation}
-Q^D = 98650 - 19350 P
-\end{equation}</p>
-
+      <p><a href="https://mybinder.org/v2/gh/mmngreco/mmngreco.github.io-source/master/?filepath=content/downloads/notebooks/competencia.ipynb"><img alt="Binder" src="https://mybinder.org/badge.svg"></a></p>
+<style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color …</style>
     </div>
 
     <div class="meta">
