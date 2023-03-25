@@ -23,10 +23,53 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Fri, 24 Mar 2023 17:16:20 &#43;0100</lastBuildDate>
+        <lastBuildDate>Sat, 25 Mar 2023 17:27:03 &#43;0100</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://mmngreco.github.com/rss.xml" />
         
+        
+            <item>
+                <title>enh(dns): how to setup DNS using GH pages and google domains</title>
+                <link>https://mmngreco.github.com/posts/setup_dns_gh_pages_google_domains/</link>
+                <guid isPermaLink="true">https://mmngreco.github.com/posts/setup_dns_gh_pages_google_domains/</guid>
+                <pubDate>Sat, 25 Mar 2023 00:00:00 &#43;0000</pubDate>
+                
+                    <author>mmngreco@gmail.com (mmngreco)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;I had struggled setting up the DNS configuracion of my custom domain in GH
+pages. Luckly, I found a video which make the process very straght forward.&lt;/p&gt;
+&lt;h2 id=&#34;ingredients&#34;&gt;Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Github repo&lt;/li&gt;
+&lt;li&gt;Github pages&lt;/li&gt;
+&lt;li&gt;Google domains&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;rsquo;s the step by step video:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/rKz6kIW4Uos&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a GH page&lt;/li&gt;
+&lt;li&gt;Create a Domain&lt;/li&gt;
+&lt;li&gt;Add a CNAME file (no sure if this is mandatory)&lt;/li&gt;
+&lt;li&gt;Add DNS rules (A, CNAME and AAAA)&lt;/li&gt;
+&lt;li&gt;Test it with dig
+&lt;code&gt;$ dig mmngreco.dev +noall +answer -t A&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>bug(i3): display issues</title>
@@ -1496,7 +1539,7 @@ de trabajo (OL; Trabajadores) y una demanda de trabajo (DL; Empresas). Éstas se
 cortarán en un punto, el de equilibrio. Al introducir un salario mínimo (SM),
 tenemos dos posibilidades, que esté por encima (Wmin1) del punto de equilibrio
 o por debajo (Wmin2).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*9bMH5zUXgypshJAHaZB5qA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*9bMH5zUXgypshJAHaZB5qA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En el gráfico se aprecia perfectamente, en teoría, que un SM por encima del
 equilibrio (W*) crea una &lt;strong&gt;distorsión&lt;/strong&gt; en el mercado haciendo que el trabajo
 demandado (L1, Empresas) sea menor al de equilibrio (L*), para Wmin1
@@ -1516,7 +1559,7 @@ equilibrio está por encima (W*,L*).&lt;/p&gt;
 efectos son aumento del desempleo, bajada de salarios, inflación, etc.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Un SMI menor que el equilibrio no afecta en absoluto al mercado.”&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*n_THmLQYns-Lcx5UGcIdpg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*n_THmLQYns-Lcx5UGcIdpg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Ahora &lt;strong&gt;acercándonos un poco mas a la realidad&lt;/strong&gt;, en el gráfico de arriba he
 representado dos mercados de trabajo, el **cualificado (**OLc) y **no
 cualificado (**OLnc). Aquí vemos que algunas características, como por ejemplo
@@ -1529,7 +1572,7 @@ indiferentes a los cualificados.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;“El salario mínimo afecta principalmente a los trabajadores no cualificados
 mientras que deja indiferentes a los cualificados.”&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*KLsfvn0Ta3IkRZhgs86v9w.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*KLsfvn0Ta3IkRZhgs86v9w.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En este caso, suponiendo que el &lt;strong&gt;mercado se encuentra en equilibrio&lt;/strong&gt; y que el
 salario mínimo es igual al de equilibrio (Wmin=W*) con una misma oferta
 laboral (OL), ante un &lt;strong&gt;shock en la demanda&lt;/strong&gt; de trabajo (aumento del desempleo
@@ -1548,14 +1591,14 @@ encima del salario de equilibrio: Por un lado tenemos que castigamos a los
 trabajadores &lt;strong&gt;no cualificados&lt;/strong&gt; y por otro la dependencia de la actividad
 económica repercute, en este caso, negativamente sobre el nivel de empleo.&lt;/p&gt;
 &lt;h1 id=&#34;evidencias-empíricas-del-smi-en-españa&#34;&gt;&lt;strong&gt;Evidencias empíricas del SMI en España:&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*Fj4NKj6b0yBglNK9DEQ3fg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*Tu_AKzshQ4t3F2fIq05RCQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*Fj4NKj6b0yBglNK9DEQ3fg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*Tu_AKzshQ4t3F2fIq05RCQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Según un estudio de Juan José Dolado, &lt;strong&gt;el SMI sólo afecta alrededor del 5 o
 6% de los asalariados&lt;/strong&gt;, (como apunte esto le descarta del comportamiento
 deficiente del mercado laboral).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*jBKBXu8lHs15RixiK4-fXQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*jBKBXu8lHs15RixiK4-fXQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En el segmento de &lt;strong&gt;adolescentes&lt;/strong&gt;, se aprecia una &lt;strong&gt;relación negativa entre el
 SMI y el empleo&lt;/strong&gt;, de forma que un aumento del 10% en el SMI provoca una
 disminución del 2% en el empleo de este segmento, esta relación se hace más
@@ -1595,7 +1638,7 @@ menciona que es difícil de predecir que pasaría si el IK
 alcanzase el 60%, teniendo en cuenta que en la actualidad se encuentra
 ligeramente por encima del 42%, ya que supondría un cambio de gran impacto de
 carácter estructural.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*DcEalOlPUqV91am6ONrfHA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*DcEalOlPUqV91am6ONrfHA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;El gráfico nos muestra que desde su implementación, la tasa de cobertura del
 SMI (Índice de Kaitz) en 1963 (el actual objetivo) lleva una &lt;strong&gt;tendencia
 claramente decreciente&lt;/strong&gt;, se pone en evidencia el **deterioro en términos

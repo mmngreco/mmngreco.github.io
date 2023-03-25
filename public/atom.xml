@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">TBD</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2023-03-24T17:16:20&#43;01:00</updated>
+    <updated>2023-03-25T17:27:03&#43;01:00</updated>
     <id>https://mmngreco.github.com/</id>
     <link rel="alternate" type="text/html" href="https://mmngreco.github.com/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mmngreco.github.com/atom.xml" />
@@ -17,10 +17,57 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.92.2">Hugo</generator>
         <entry>
+            <title type="text">enh(dns): how to setup DNS using GH pages and google domains</title>
+            <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/setup_dns_gh_pages_google_domains/" />
+            <id>https://mmngreco.github.com/posts/setup_dns_gh_pages_google_domains/</id>
+            <updated>2023-03-25T17:26:17&#43;01:00</updated>
+            <published>2023-03-25T00:00:00&#43;00:00</published>
+            <author>
+                    <name>mmngreco</name>
+                    <uri>https://mmngreco.github.io/biolink/</uri>
+                    <email>mmngreco@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">I had struggled setting up the DNS configuracion of my custom domain in GH pages. Luckly, I found a video which make the process very straght forward.
+Ingredients  Github repo Github pages Google domains  Here&amp;rsquo;s the step by step video:</summary>
+            
+                <content type="html">&lt;p&gt;I had struggled setting up the DNS configuracion of my custom domain in GH
+pages. Luckly, I found a video which make the process very straght forward.&lt;/p&gt;
+&lt;h2 id=&#34;ingredients&#34;&gt;Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Github repo&lt;/li&gt;
+&lt;li&gt;Github pages&lt;/li&gt;
+&lt;li&gt;Google domains&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;rsquo;s the step by step video:&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/rKz6kIW4Uos&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a GH page&lt;/li&gt;
+&lt;li&gt;Create a Domain&lt;/li&gt;
+&lt;li&gt;Add a CNAME file (no sure if this is mandatory)&lt;/li&gt;
+&lt;li&gt;Add DNS rules (A, CNAME and AAAA)&lt;/li&gt;
+&lt;li&gt;Test it with dig
+&lt;code&gt;$ dig mmngreco.dev +noall +answer -t A&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">bug(i3): display issues</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/i3-graphics-monitor-issues/" />
             <id>https://mmngreco.github.com/posts/i3-graphics-monitor-issues/</id>
-            <updated>2023-03-24T15:28:26&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -66,7 +113,7 @@ monitor and I&amp;rsquo;ve found the following command which solved my problems:
             <title type="text">bug(programming) Clean code es horriblemente lento</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/clean-code-es-lento/" />
             <id>https://mmngreco.github.com/posts/clean-code-es-lento/</id>
-            <updated>2023-03-24T15:40:48&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -131,7 +178,7 @@ Es un proyecto grande o pequeño? Lo tienes claro o no?&lt;/li&gt;
             <title type="text">enh(economics): La ley de hotelling</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/hotelling/" />
             <id>https://mmngreco.github.com/posts/hotelling/</id>
-            <updated>2023-03-24T15:39:41&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -465,7 +512,7 @@ Es un proyecto grande o pequeño? Lo tienes claro o no?&lt;/li&gt;
             <title type="text">enh(economics): Resolviendo equilibrio en competencia perfecta</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/competencia/" />
             <id>https://mmngreco.github.com/posts/competencia/</id>
-            <updated>2023-03-24T15:41:36&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -1051,7 +1098,7 @@ Q^D = 98650 - 19350 P
             <title type="text">enh(health): maximizing productivity, physical and mental health</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/maximizing-productivity/" />
             <id>https://mmngreco.github.com/posts/maximizing-productivity/</id>
-            <updated>2023-03-24T15:39:30&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -1165,7 +1212,7 @@ mood.&lt;/li&gt;
             <title type="text">enh(health): Respira!</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/breathing-exercises/" />
             <id>https://mmngreco.github.com/posts/breathing-exercises/</id>
-            <updated>2023-03-24T15:38:04&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -1231,7 +1278,7 @@ de ánimo.&lt;/p&gt;
             <title type="text">enh(vim,plugin): I wrote my first vim plugin</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/dbee-nvim/" />
             <id>https://mmngreco.github.com/posts/dbee-nvim/</id>
-            <updated>2023-03-24T15:40:08&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -1329,7 +1376,7 @@ free to open an issue ;-)&lt;/p&gt;
             <title type="text">qst(unittest): No escribes unit tests?</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/you-dont-unitest/" />
             <id>https://mmngreco.github.com/posts/you-dont-unitest/</id>
-            <updated>2023-03-24T15:35:20&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2023-03-24T14:59:14&#43;01:00</published>
             <author>
                     <name>mmngreco</name>
@@ -1393,7 +1440,7 @@ es mas susceptible a reptir los errores del pasado.&lt;/li&gt;
             <title type="text">enh(tmux): How to improve tmux session switching</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/tmux-fzf-session/" />
             <id>https://mmngreco.github.com/posts/tmux-fzf-session/</id>
-            <updated>2023-03-24T15:59:35&#43;01:00</updated>
+            <updated>2023-03-24T17:21:56&#43;01:00</updated>
             <published>2021-12-08T00:00:00&#43;00:00</published>
             <author>
                     <name>mmngreco</name>
@@ -1468,7 +1515,7 @@ tmux switch-client -t &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;s
             <title type="text">enh(economics): Notas sobre el SMI</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/notas_smi/" />
             <id>https://mmngreco.github.com/posts/notas_smi/</id>
-            <updated>2023-03-24T15:59:15&#43;01:00</updated>
+            <updated>2023-03-25T17:17:48&#43;01:00</updated>
             <published>2013-12-20T00:00:00&#43;00:00</published>
             <author>
                     <name>mmngreco</name>
@@ -1524,7 +1571,7 @@ de trabajo (OL; Trabajadores) y una demanda de trabajo (DL; Empresas). Éstas se
 cortarán en un punto, el de equilibrio. Al introducir un salario mínimo (SM),
 tenemos dos posibilidades, que esté por encima (Wmin1) del punto de equilibrio
 o por debajo (Wmin2).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*9bMH5zUXgypshJAHaZB5qA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*9bMH5zUXgypshJAHaZB5qA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En el gráfico se aprecia perfectamente, en teoría, que un SM por encima del
 equilibrio (W*) crea una &lt;strong&gt;distorsión&lt;/strong&gt; en el mercado haciendo que el trabajo
 demandado (L1, Empresas) sea menor al de equilibrio (L*), para Wmin1
@@ -1544,7 +1591,7 @@ equilibrio está por encima (W*,L*).&lt;/p&gt;
 efectos son aumento del desempleo, bajada de salarios, inflación, etc.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Un SMI menor que el equilibrio no afecta en absoluto al mercado.”&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*n_THmLQYns-Lcx5UGcIdpg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*n_THmLQYns-Lcx5UGcIdpg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Ahora &lt;strong&gt;acercándonos un poco mas a la realidad&lt;/strong&gt;, en el gráfico de arriba he
 representado dos mercados de trabajo, el **cualificado (**OLc) y **no
 cualificado (**OLnc). Aquí vemos que algunas características, como por ejemplo
@@ -1557,7 +1604,7 @@ indiferentes a los cualificados.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;“El salario mínimo afecta principalmente a los trabajadores no cualificados
 mientras que deja indiferentes a los cualificados.”&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*KLsfvn0Ta3IkRZhgs86v9w.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*KLsfvn0Ta3IkRZhgs86v9w.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En este caso, suponiendo que el &lt;strong&gt;mercado se encuentra en equilibrio&lt;/strong&gt; y que el
 salario mínimo es igual al de equilibrio (Wmin=W*) con una misma oferta
 laboral (OL), ante un &lt;strong&gt;shock en la demanda&lt;/strong&gt; de trabajo (aumento del desempleo
@@ -1576,14 +1623,14 @@ encima del salario de equilibrio: Por un lado tenemos que castigamos a los
 trabajadores &lt;strong&gt;no cualificados&lt;/strong&gt; y por otro la dependencia de la actividad
 económica repercute, en este caso, negativamente sobre el nivel de empleo.&lt;/p&gt;
 &lt;h1 id=&#34;evidencias-empíricas-del-smi-en-españa&#34;&gt;&lt;strong&gt;Evidencias empíricas del SMI en España:&lt;/strong&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*Fj4NKj6b0yBglNK9DEQ3fg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*Tu_AKzshQ4t3F2fIq05RCQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*Fj4NKj6b0yBglNK9DEQ3fg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*Tu_AKzshQ4t3F2fIq05RCQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Según un estudio de Juan José Dolado, &lt;strong&gt;el SMI sólo afecta alrededor del 5 o
 6% de los asalariados&lt;/strong&gt;, (como apunte esto le descarta del comportamiento
 deficiente del mercado laboral).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*jBKBXu8lHs15RixiK4-fXQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*jBKBXu8lHs15RixiK4-fXQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En el segmento de &lt;strong&gt;adolescentes&lt;/strong&gt;, se aprecia una &lt;strong&gt;relación negativa entre el
 SMI y el empleo&lt;/strong&gt;, de forma que un aumento del 10% en el SMI provoca una
 disminución del 2% en el empleo de este segmento, esta relación se hace más
@@ -1623,7 +1670,7 @@ menciona que es difícil de predecir que pasaría si el IK
 alcanzase el 60%, teniendo en cuenta que en la actualidad se encuentra
 ligeramente por encima del 42%, ya que supondría un cambio de gran impacto de
 carácter estructural.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/notas-smi/1*DcEalOlPUqV91am6ONrfHA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/1*DcEalOlPUqV91am6ONrfHA.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;El gráfico nos muestra que desde su implementación, la tasa de cobertura del
 SMI (Índice de Kaitz) en 1963 (el actual objetivo) lleva una &lt;strong&gt;tendencia
 claramente decreciente&lt;/strong&gt;, se pone en evidencia el **deterioro en términos

@@ -61,7 +61,7 @@ cortarán en un punto, el de equilibrio. Al introducir un salario mínimo (SM),
 tenemos dos posibilidades, que esté por encima (Wmin1) del punto de equilibrio
 o por debajo (Wmin2).
 
-![](img/notas-smi/1*9bMH5zUXgypshJAHaZB5qA.png)
+![](img/1*9bMH5zUXgypshJAHaZB5qA.png)
 
 En el gráfico se aprecia perfectamente, en teoría, que un SM por encima del
 equilibrio (W\*) crea una **distorsión** en el mercado haciendo que el trabajo
@@ -84,7 +84,7 @@ equilibrio está por encima (W\*,L\*).
 >
 > **Un SMI menor que el equilibrio no afecta en absoluto al mercado.”**
 
-![](img/notas-smi/1*n_THmLQYns-Lcx5UGcIdpg.png)
+![](img/1*n_THmLQYns-Lcx5UGcIdpg.png)
 
 Ahora **acercándonos un poco mas a la realidad**, en el gráfico de arriba he
 representado dos mercados de trabajo, el **cualificado (**OLc) y **no
@@ -98,7 +98,7 @@ indiferentes a los cualificados.
 > **“El salario mínimo afecta principalmente a los trabajadores no cualificados
 > mientras que deja indiferentes a los cualificados.”**
 
-![](img/notas-smi/1*KLsfvn0Ta3IkRZhgs86v9w.png)
+![](img/1*KLsfvn0Ta3IkRZhgs86v9w.png)
 
 En este caso, suponiendo que el **mercado se encuentra en equilibrio** y que el
 salario mínimo es igual al de equilibrio (Wmin=W\*) con una misma oferta
@@ -120,15 +120,15 @@ económica repercute, en este caso, negativamente sobre el nivel de empleo.
 
 # **Evidencias empíricas del SMI en España:**
 
-![](img/notas-smi/1*Fj4NKj6b0yBglNK9DEQ3fg.png)
+![](img/1*Fj4NKj6b0yBglNK9DEQ3fg.png)
 
-![](img/notas-smi/1*Tu_AKzshQ4t3F2fIq05RCQ.png)
+![](img/1*Tu_AKzshQ4t3F2fIq05RCQ.png)
 
 > Según un estudio de Juan José Dolado, **el SMI sólo afecta alrededor del 5 o
 > 6% de los asalariados**, (como apunte esto le descarta del comportamiento
 > deficiente del mercado laboral).
 
-![](img/notas-smi/1*jBKBXu8lHs15RixiK4-fXQ.png)
+![](img/1*jBKBXu8lHs15RixiK4-fXQ.png)
 
 En el segmento de **adolescentes**, se aprecia una **relación negativa entre el
 SMI y el empleo**, de forma que un aumento del 10% en el SMI provoca una
@@ -173,7 +173,7 @@ alcanzase el 60%, teniendo en cuenta que en la actualidad se encuentra
 ligeramente por encima del 42%, ya que supondría un cambio de gran impacto de
 carácter estructural.
 
-![](img/notas-smi/1*DcEalOlPUqV91am6ONrfHA.png)
+![](img/1*DcEalOlPUqV91am6ONrfHA.png)
 
 El gráfico nos muestra que desde su implementación, la tasa de cobertura del
 SMI (Índice de Kaitz) en 1963 (el actual objetivo) lleva una **tendencia
