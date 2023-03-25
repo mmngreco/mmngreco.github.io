@@ -2,6 +2,9 @@
 title: "enh(dns): how to setup DNS using GH pages and google domains"
 date: 2023-03-25
 draft: false
+comments: true
+tags: ['dns', 'issues', 'github']
+categories: ['hacking']
 ---
 
 I had struggled setting up the DNS configuracion of my custom domain in GH

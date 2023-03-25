@@ -2,9 +2,9 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <title type="text">TBD</title>
+    <title type="text">WTFM</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2023-03-25T17:27:03&#43;01:00</updated>
+    <updated>2023-03-25T18:23:07&#43;01:00</updated>
     <id>https://mmngreco.github.com/</id>
     <link rel="alternate" type="text/html" href="https://mmngreco.github.com/" />
     <link rel="self" type="application/atom&#43;xml" href="https://mmngreco.github.com/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">enh(dns): how to setup DNS using GH pages and google domains</title>
             <link rel="alternate" type="text/html" href="https://mmngreco.github.com/posts/setup_dns_gh_pages_google_domains/" />
             <id>https://mmngreco.github.com/posts/setup_dns_gh_pages_google_domains/</id>
-            <updated>2023-03-25T17:26:17&#43;01:00</updated>
+            <updated>2023-03-25T17:56:05&#43;01:00</updated>
             <published>2023-03-25T00:00:00&#43;00:00</published>
             <author>
                     <name>mmngreco</name>
@@ -57,7 +57,35 @@ pages. Luckly, I found a video which make the process very straght forward.&lt;/
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://mmngreco.github.com/categories/hacking/" term="hacking" label="hacking" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://mmngreco.github.com/tags/dns/" term="dns" label="dns" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://mmngreco.github.com/tags/issues/" term="issues" label="issues" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://mmngreco.github.com/tags/github/" term="github" label="github" />
+                            
+                        
                     
                 
             
