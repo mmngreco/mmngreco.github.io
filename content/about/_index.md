@@ -4,29 +4,37 @@ date: 2023-03-25T17:56:57+01:00
 draft: false
 ---
 
-Welcome to my blog! My name is Maximiliano Greco, and I'm excited to share my
-experiences and learnings with you. This blog is a space for me to document my
-journey through life, technology, and everything in between.
+Welcome to my blog!
 
-Growing up in Argentina, I always had an interest in technology and computers.
-However, when I expressed my desire to study computer science, everyone
-discouraged me from pursuing it. So, I decided to take matters into my own
-hands and teach myself programming. I started with Python, and I quickly fell
-in love with its simplicity and versatility.
+My name is Maximiliano Greco, and I'm an Argentinean who moved to Italy at the
+age of 15, and then to Spain. Although I struggled with my studies in Spain, I
+managed to overcome the challenges of high school and university. I studied
+economics at the University of Zaragoza, mainly because I wanted to understand
+better what was happening during the 2008 financial crisis.
 
-After moving to Spain and completing my degree in Economics at the University
-of Zaragoza, I continued to explore my passion for programming. I used Python
-to analyze data and gain insights into the world of public economics. My love
-for programming only grew stronger as I built my own mechanical keyboards and
-explored the world of electronics.
+Despite being discouraged by everyone around me, I have always had an interest
+in programming, so I decided to study it on my own. I started with Python as a
+language and completed all the programming exercises in my economics courses,
+such as econometrics, microeconomics, and statistics. My favorite subject in
+college was Public Economics because it had a strong practical component and
+plenty of data available. As my final project, I analyzed income inequality
+using Python with the IRPF tax.
 
-Through this blog, I hope to share my knowledge and experiences with others who
-are interested in programming, economics, or just learning new things. I
-believe in the power of community and collaboration, and I'm excited to connect
-with like-minded individuals.
+I love electronics, so much so that I'm an enthusiast in building mechanical
+keyboards such as Corne, Lily58, and Dactyl Manuform. I'm always eager to learn
+new things, and I enjoy running, practicing yoga, meditating, and dedicating
+time to reading. My latest read was "The Pragmatic Programmer," and I love its
+philosophy.
 
-So, whether you're a seasoned programmer or just starting out, join me on this
-journey of learning, growth, and exploration. I'll be posting content in both
-English and Spanish, and I look forward to hearing your thoughts and ideas.
+This blog is an effort to share my experiences and learnings, and if it can
+help anyone else, that's fantastic. My favorite text editor is Vim (I'm a
+fanboy), and I have a bit of an obsession with efficiency, which I have managed
+to keep under control over the years. I use Cherry Brown switches on my
+keyboards.
 
-Until next time, may your code be bug-free and your keyboard clicky!
+Expect to find content in both Spanish and English, and don't hesitate to reach
+out if you have any questions or comments.
+
+Stay tuned, and happy programming!
+
+--Max, your friendly neighborhood programmer.
