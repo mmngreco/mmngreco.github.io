@@ -102,11 +102,11 @@ uglyURLs = false
     # Email
     email = "mmngreco@gmail.com"
     # Motto or introduction
-    motto = "Viva La Vida"
+    motto = "Actio, non verba."
     # Avatar
     avatar = "/icons/apple-touch-icon.png"
     # Personal website, default: baseURL
-    website = "https://mmngreco.github.io/biolink/"
+    website = "https://mmngreco.dev"
     # Twitter
     twitter = "mmngreco"
 
@@ -203,12 +203,12 @@ uglyURLs = false
 
 [menu]
     ## Menu bar
-    # [[menu.main]]
-    #     pageref = "/"
-    #     name = "Home"
-    #     weight = 1
-    #     pre = "internal"
-    #     post = "home"
+    [[menu.main]]
+        pageref = "/"
+        name = "Home"
+        weight = 1
+        pre = "internal"
+        post = "home"
     [[menu.main]]
         pageref = "/posts/"
         name = "Posts"
@@ -243,6 +243,12 @@ uglyURLs = false
         weight = 8
         identifier = "search"
         post = "search"
+    [[menu.main]]
+        pageref = "/photos/"
+        name = "Photos"
+        weight = 2
+        pre = "internal"
+        post = "camera"
 
 
 
@@ -271,7 +277,7 @@ uglyURLs = false
     # on narrow screen?
     enableNavToggle = true
 
-    navHeight = "10em"
+    navHeight = "14em"
     # Note: menu bar height when it’s
     #       toggled
 
@@ -332,7 +338,7 @@ uglyURLs = false
     homePoetry = []
     # Padding of links at the bottom
     # Unit: em
-    homeLinksPadding = 1
+    homeLinksPadding = 2
 
     ## Footage
     homePoster = ""
@@ -359,11 +365,11 @@ uglyURLs = false
     siteLogo = "/icons/apple-touch-icon.png"
     # Note: used for JSON-LD, Open Graph
 
-    siteDescription = "MemE is a powerful and highly customizable GoHugo theme for personal blogs."
+    siteDescription = "A personal blog where I express my thoughts and learning experiences."
     # Note: used for HTML head meta, JSON-LD,
     #       Open Graph, Atom, RSS
 
-    siteCreatedTime = "1969-07-20T20:17:43+00:00"
+    siteCreatedTime = "2023-03-20T20:17:43+00:00"
     # ATTENTION: keep this format, change
     #            the number
 
@@ -460,10 +466,10 @@ uglyURLs = false
     # Note: left or right
 
     # Separate the list by month?
-    groupByMonth = true
+    groupByMonth = false
 
     # Enable Chinese zodiac?
-    chineseZodiac = true
+    chineseZodiac = false
 
     # Translate the year? (valid for title)
     i18nYear = false
@@ -499,7 +505,8 @@ uglyURLs = false
     #       name of the folder under the
     #       site’s `content` directory.
 
-    # mainSections = ["posts"]
+    # TODO: add new section
+    mainSections = ["posts"]
 
 
     ######################################
@@ -535,7 +542,7 @@ uglyURLs = false
 
     enableDarkMode = true
 
-    defaultTheme = "light"
+    defaultTheme = "dark"
     # Note: light or dark
 
     hideThemeToggle = false
@@ -563,14 +570,20 @@ uglyURLs = false
     # Note: go to https://realfavicongenerator.net/
     #       to generate related icons and
     #       files, unzip after downloading,
-    #       and keep only android-chrome-512x512.png,
-    #       apple-touch-icon.png, mstile-150x150.png,
-    #       safari-pinned-tab.svg, favicon.ico,
-    #       site.webmanifest these files,
+    #       and keep only
+    #         - android-chrome-512x512.png,
+    #         - apple-touch-icon.png,
+    #         - mstile-150x150.png,
+    #         - safari-pinned-tab.svg,
+    #         - favicon.ico,
+    #         - site.webmanifest
+    #       these files,
     #       delete the rest. Then move
     #       these files to the ~/blog/static/icons/
-    #       directory, move favicon.ico,
-    #       site.webmanifest to the ~/blog/static/
+    #       directory, move
+    #          - favicon.ico,
+    #          - site.webmanifest
+    #       to the ~/blog/static/
     #       directory, and finally rename
     #       site.webmanifest to manifest.json,
     #       and check and modify related
@@ -662,7 +675,7 @@ uglyURLs = false
     autoLoadComments = true
 
     ## Disqus
-    enableDisqus = true
+    enableDisqus = false
     disqusShortname = "mmngreco"
 
     ## Valine
@@ -687,12 +700,12 @@ uglyURLs = false
     # Note: https://valine.js.org/
 
     ## Utterances
-    enableUtterances = false
-    utterancesRepo = ""
+    enableUtterances = true
+    utterancesRepo = "https://github.com/mmngreco/mmngreco.github.io"
     utterancesIssueTerm = "pathname"
     utterancesTheme = "github-light"
     utterancesThemeDark = "photon-dark"
-    utterancesLabel = ""
+    utterancesLabel = "blog:comment"
     # Note: https://utteranc.es/
 
     ## Gitalk
@@ -799,13 +812,13 @@ uglyURLs = false
     #            supported
 
     # The content width of the post
-    postWidth = 36
+    postWidth = 42
     # Note: you can leave it empty("") to
     #       fallback to the default value: 42
     #       Unit: em
 
     # Is the post original?
-    original = true
+    original = false
     # Note: will affect the author and
     #       copyright information of the
     #       post
@@ -1047,12 +1060,12 @@ uglyURLs = false
     ######################################
     ## Font Size (unit: px)
 
-    fontSize = 18
+    fontSize = 22
 
     ######################################
     ## Tab Size
 
-    tabSize = 4
+    tabSize = 2
 
     ######################################
     ## Line Height
@@ -1145,9 +1158,9 @@ uglyURLs = false
     ######################################
     # Post Updated Badge
 
-    enablePostUpdatedBadge = true
+    enablePostUpdatedBadge = false
 
-    displayUpdatedBadge = true
+    displayUpdatedBadge = false
     # Note: *global settings*
     #       `badge` in post’s Front Matter
     #       has a higher priority than here
@@ -1195,16 +1208,16 @@ uglyURLs = false
     #       `share` in post’s Front Matter
     #       has a higher priority than here
 
-    displayShareOnText = false
+    displayShareOnText = true
 
     shareOnTwitter = true
     shareOnFacebook = true
     shareOnLinkedIn = true
     shareOnTelegram = true
-    shareOnWeibo = true
-    shareOnDouban = true
-    shareOnQQ = true
-    shareOnQzone = true
+    shareOnWeibo = false
+    shareOnDouban = false
+    shareOnQQ = false
+    shareOnQzone = false
 
     shareViaQRCode = true
 
