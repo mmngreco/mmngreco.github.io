@@ -1,10 +1,9 @@
-
-on:
-  push:
+on: [push]
 
 jobs:
-  build:
+  tooth:
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.event.head_commit.message, 'enh(post)') }}
     steps:
 
     - name: Checkout

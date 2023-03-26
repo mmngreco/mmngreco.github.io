@@ -243,12 +243,12 @@ uglyURLs = false
         weight = 8
         identifier = "search"
         post = "search"
-    [[menu.main]]
-        pageref = "/photos/"
-        name = "Photos"
-        weight = 2
-        pre = "internal"
-        post = "camera"
+    # [[menu.main]]
+    #     pageref = "/photos/"
+    #     name = "Photos"
+    #     weight = 2
+    #     pre = "internal"
+    #     post = "camera"
 
 
 
