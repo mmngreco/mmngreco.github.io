@@ -37,11 +37,12 @@ $(xsetwacom list | grep "stylus" | awk '{print $8}')
 
 Choose a connected display with this code:
 
+> Note: using fzf as selector.
+
 ```bash
 $(xrandr | grep connected | grep -v dis | awk '{print $1}' | fzf --height 10% --reverse)
 ```
 
-> fzf as selector.
 
 
 
