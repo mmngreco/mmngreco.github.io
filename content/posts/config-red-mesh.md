@@ -2,6 +2,8 @@
 title: "Configurando red mesh usando 2 routers AX3600"
 date: 2023-08-15
 draft: false
+categories: ["hacking"]
+labels: ["red", "xiaomi", "router", "mesh", "ax3600"]
 ---
 
 No se cuantas horas he desper... invertido en tratar de configurar la red mesh
