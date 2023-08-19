@@ -10,7 +10,10 @@ draft: false
 I was working as usual when, after executing `black src`, my terminal just
 vanished. There was no apparent reason for this. However, since I use tmux,
 everything was still intact. I opened a new `st` terminal, but it was impossible
-to attach the tmux session without causing a crash in `st`. The culprit? Emojis!
+to attach the tmux session without causing a crash in `st`. The culprit?
+[Emojis!][black-emojis]
+
+![screenshot showing black emojis](black.png)
 
 > Note: For more information, check out this [video][video].
 
@@ -76,3 +79,5 @@ those unexpected crashes and switches between terminals to keep working.
 [issue-1]: https://www.reddit.com/r/archlinux/comments/byy647/st_sucklesssimple_terminal_and_emoji/
 [issue-2]: https://www.reddit.com/r/suckless/comments/gp1xfk/st_find_cause_for_terminal_crash/
 [issue-3]: https://github.com/LukeSmithxyz/voidrice/issues/284
+
+[black-emojis]: https://github.com/psf/black/issues/223
