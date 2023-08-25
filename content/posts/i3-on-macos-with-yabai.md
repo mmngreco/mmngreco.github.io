@@ -42,7 +42,7 @@ To ensure everything works correctly, you need to grant access to `skhd` and
 `yabai` on MacOS. After a restart, everything should function as expected.
 
 
-## Enlaces
+## Useful Links
 
 - [yabai's wiki][wiki]
 - [How To Use A Tiling Window Manager On MacOs | Yabai Ultimate Guide][yt]
