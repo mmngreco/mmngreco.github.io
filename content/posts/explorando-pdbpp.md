@@ -41,20 +41,21 @@ def main():
   return out
 ```
 
-`python foo.py`
+Para depurar, ejeucta:`python foo.py`
 
 ### Interactivamente
 
-`python -m pdb foo.py`
+Puedes usar el modulo `pdb` directamente: `python -m pdb foo.py`
 
 ```
 (Pdb++) b <file>/<function>/<class>:<lineno>, <condition>
 (Pdb++) b foo:6
-(Pdb++) c
+(Pdb++) h # or help
+(Pdb++) c # or continue
 ```
 
 
-### `.pdbrc`
+### Usando `.pdbrc`
 
 `pdbpp` lee automaticamente el archivo `.pdbrc` si existe lo que es muy comodo
 para tener tus `breakpoints` explicitos en un fichero y evitar modificar el
@@ -68,7 +69,7 @@ print("Hello from {__file__}")
 ```
 
 
-`python foo.py`
+Ejecuta: `python foo.py`
 
 
 Esto permite tener un fichero por proyecto estandarizando el debugging,
@@ -113,7 +114,7 @@ class Config(pdb.DefaultConfig):
 
 ## Features favoritas
 
-### `pdb.disable()`
+### Función `pdb.disable()`
 
 Omite los breakpoints que tengas en el codigo o en `.pdbrc`:
 
@@ -123,7 +124,7 @@ import pdb; pdb.disable()
 ```
 
 
-### `edit`
+### Comando `edit`
 
 
 En modo intercativo:
@@ -136,7 +137,7 @@ Abre `foo` usando `$EDITOR`, require reiniciar el debugger para que tenga
 efecto.
 
 
-### `display`
+### Comando `display`
 
 En modo intercativo / `.pdbrc`
 
@@ -147,7 +148,7 @@ display a
 Cada vez que la variable `a` cambie se imprime el valor. Esto depende del scope
 en el que es ejecutado.
 
-### `@pdb.break_on_setattr(attrname)`
+### Decorador `@pdb.break_on_setattr(attrname)`
 
 
 Breakpoint cuando cambia el atributo de una clase
@@ -163,7 +164,7 @@ f.bar = 42    # the program breaks here
 
 Esto es muy bueno!
 
-### `pdb.xpm()`
+### Función `pdb.xpm()`
 
 Extended post mortem:
 
@@ -178,7 +179,7 @@ No he conseguido que funcione, pero me encanta la idea. A ver si consigo
 actualizar esto mas adelante.
 
 
-## Streming
+## Streaming
 
 Este post es un resumen de lo que fui explorando en streaming:
 
