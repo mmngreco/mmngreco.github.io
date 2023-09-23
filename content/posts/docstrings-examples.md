@@ -52,4 +52,4 @@ usabilidad y la mantenibilidad de mi código. Te animo a probar esta técnica y
 descubrirás cómo facilita la vida de quienes trabajan con tu código.
 
 
-- [doctest]: https://docs.python.org/es/3/library/doctest.html
+[doctest]: https://docs.python.org/es/3/library/doctest.html
