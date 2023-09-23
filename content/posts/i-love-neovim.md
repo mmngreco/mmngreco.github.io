@@ -129,3 +129,4 @@ sin problemas.
 [prime]: https://www.youtube.com/watch?v=X6AR2RMB5tE
 [tj]: https://www.youtube.com/watch?v=stqUbv-5u2s
 [kickstart]: https://github.com/nvim-lua/kickstart.nvim
+[motion]: https://www.freecodecamp.org/news/vim-language-and-motions-explained/
