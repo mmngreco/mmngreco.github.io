@@ -2,8 +2,8 @@
 title: "Better git stash workflow"
 date: 2023-08-19
 draft: false
-categories: ["hacking"]
-labels: ["hack", "git", "stash", "fzf"]
+categories: ["programming"]
+labels: ["hacking", "git", "stash", "fzf"]
 ---
 
 

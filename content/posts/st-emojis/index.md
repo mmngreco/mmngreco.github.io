@@ -2,6 +2,8 @@
 title: "st with colored emojis"
 date: 2023-08-18
 draft: false
+categories: ["programming"]
+labels: ["terminal", "simple-terminal", "emojis", "hacking"]
 ---
 
 

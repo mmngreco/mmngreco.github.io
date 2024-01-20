@@ -1,7 +1,9 @@
 ---
-title: "bug(i3): display issues"
+title: "display issues on i3"
 date: 2023-03-24T14:59:14+01:00
 draft: false
+categories: ["programming"]
+labels: ["screen", "hacking", "hardware"]
 ---
 
 

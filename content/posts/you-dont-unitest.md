@@ -1,7 +1,9 @@
 ---
-title: "qst(unittest): No escribes unit tests?"
+title: "No escribes unit tests?"
 date: 2023-03-24T14:59:14+01:00
 draft: false
+categories: ["programming"]
+labels: ['testing']
 ---
 
 

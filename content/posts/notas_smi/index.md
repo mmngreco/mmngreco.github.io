@@ -1,7 +1,9 @@
 ---
-title: "enh(economics): Notas sobre el SMI"
+title: "Notas sobre el SMI"
 date: 2013-12-20
 draft: false
+categories: ["economics"]
+labels: ["wage"]
 ---
 
 <!-- Title: Notas sobre el SMI -->

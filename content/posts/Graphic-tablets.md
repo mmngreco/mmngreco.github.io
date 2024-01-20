@@ -2,8 +2,8 @@
 title: "Graphic Tablets"
 date: 2023-04-16T14:45:04Z
 draft: false
-categories: ["hacking"]
-labels: ["graphic-tablets", "display", "monitor", "fzf"]
+categories: ["programming"]
+labels: ["hacking", "hardware", "graphic-tablets", "display", "monitor", "fzf"]
 ---
 
 
