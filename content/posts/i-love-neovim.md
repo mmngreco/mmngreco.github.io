@@ -3,8 +3,8 @@ title: "Neovim, el editor definitivo"
 date: 2023-09-23T18:58:21+02:00
 draft: true
 date: 2023-09-23
-categories: ["hacking"]
-labels: ["spanish", "neovim", "programming"]
+categories: ["programming"]
+labels: ["hacking","spanish", "neovim"]
 ---
 
 ## Por que usar Neovim
