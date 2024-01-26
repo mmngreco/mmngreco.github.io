@@ -6,35 +6,29 @@ categories: ["programming"]
 tags: ["python", "pyproject", "build", "dependencies"]
 ---
 
+Mira esta ejemplo de cómo configurar un proyecto Python con lo esencial para
+comenzar rápidamente, pero con la capacidad de ajustar y escalar conforme las
+necesidades aumenten.
 
-A continuación, te presentamos un ejemplo de cómo configurar un proyecto Python
-con lo esencial para comenzar rápidamente, pero con la capacidad de ajustar y
-escalar conforme las necesidades aumenten.
-
-Por lo general, necesitarás los siguientes elementos:
-
-- `pyproject.toml`: Este es el archivo de configuración estándar
-  [PEP-518][pep518] para proyectos Python. En él incluirás la información
-  principal del proyecto y las dependencias.
+- `pyproject.toml`: archivo de configuración estándar [PEP-518][pep518] para
+  proyectos Python.
 - `Makefile`: Se utiliza para automatizar tareas como testing, build, installs,
   entre otros.
 - `__version__` (opcional): Es útil para mantener un registro de las distintas
   versiones de tu proyecto.
 
-Una de las estrategias es comenzar con todos los elementos en un solo archivo y
+Mi estrategia favorita es comenzar con todos los elementos en un solo archivo y
 luego, a medida que el proyecto crezca, dividirlos en la estructura de carpetas
-basada en `src`. Sin embargo, mi consejo es no preocuparse por esta
-reestructuración hasta que sea verdaderamente necesario.
+basada en `src`. No me preocuparia por esta reestructuración hasta que sea
+verdaderamente necesario.
 
-Recomiendo usar `setuptools-scm` para obtener una versión automática de la
-librería basada en los tags de Git, los cuales deben seguir el estándar
-PEP-440.
+Aqui uso `setuptools-scm` para obtener una versión automática de la librería
+basada en los tags de Git, los cuales deben seguir el estándar [PEP-440][pep440].
 
-[pep518]: https://peps.python.org/pep-0518/
 
 ## Ejemplo: Creando `takt`
 
-Aquí está el proceso que seguí cuando creé `takt`, con el que hasta ahora estoy
+Esto es lo que use para crear [`takt`][takt], con el que hasta ahora estoy
 muy contento:
 
 ```bash
@@ -45,21 +39,20 @@ touch takt/pyproject.toml
 touch takt/takt.py
 ```
 
-Con estos prácticos fundamentos, podrás echar a andar tu propio proyecto en
-Python de forma rápida y eficiente. Te proporcionan un flujo de trabajo
-sencillo y efectivo que te permitirá alcanzar tus objetivos sin complicaciones.
+Esto es lo minimo que se necesita para empezar un proyecto python.
 
 ## `pyproject.toml`
 
 Este archivo es una especificación moderna de empaque para proyectos de Python,
-según [PEP 518](https://peps.python.org/pep-0518/). Sirve para declarar las
-dependencias que necesitas para construir tu proyecto desde la fuente. Esta es
-una alternativa al uso de `setup.py` y `requirements.txt` en proyectos Python.
+según [PEP-518][pep518]. Sirve para declarar las dependencias que necesitas
+para construir tu proyecto desde la fuente. Esta es una alternativa al uso de
+`setup.py` y `requirements.txt` en proyectos Python.
 
-En general, puedes pensar en `pyproject.toml` como un archivo de configuración
-centralizado para muchas de las herramientas que podrías usar en tu proyecto
-Python. Su uso es cada vez más común a medida que dichas herramientas migran su
-soporte al archivo `pyproject.toml`.
+`pyproject.toml` es como un archivo de configuración centralizado para muchas
+de las herramientas que podrías usar en tu proyecto Python. Su uso es cada vez
+más común a medida que dichas herramientas migran su soporte al archivo
+`pyproject.toml`.
+
 
 ```toml
 [build-system]
@@ -87,21 +80,12 @@ takt = "takt:app"
 
 ## Definición de `__version__` (Opcional)
 
-La asignación de un número de versión o `__version__` para tu biblioteca es un
-paso opcional, pero sin duda útil. Esta opción te permite definir de una manera
-sencilla el número de versión de tu biblioteca, sin la necesidad de crear un
-fichero aparte. Claro está, si prefieres asignar la versión de esta manera,
-eres libre de hacerlo. Es solo otra opción en el amplio abanico de
-posibilidades que el desarrollo ofrece.
-
-Recuerda que mantener un registro claro del número de la versión de tu
-biblioteca es una excelente práctica, lo cual facilita el rastreo de
-actualizaciones y modificaciones. Esto es especialmente válido para los
-usuarios que utilizan tu biblioteca en sus proyectos.
-
-Además, esta convención está respaldada por PEP 396, una guía dentro de las
-Directrices de Mejoramiento de Python que destaca las buenas prácticas en la
-asignación de versiones.
+Asignar un número de versión o `__version__` a un proyecto es un paso opcional,
+pero definitivamente beneficioso. Lo que hace es facilitar la identificación
+del número de versión de la biblioteca, sin la necesidad de generar un archivo
+adicional. Por supuesto, si se prefiere seguir esta ruta, se puede. Simplemente
+es una opción más en el amplio espectro de posibilidades que el desarrollo
+proporciona.
 
 ```python
 from importlib.metadata import version, PackageNotFoundError
@@ -196,3 +180,9 @@ fix-requirements.txt:  ## fix requirements.txt using GH_TOKEN variable for priva
 	fi
 	@cat requirements.txt
 ```
+
+
+
+[pep518]: https://peps.python.org/pep-0518/
+[pep440]: https://peps.python.org/pep-0440/
+[tatk]: https://github.com/mmngreco/takt
