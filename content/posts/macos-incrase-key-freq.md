@@ -1,6 +1,6 @@
 ---
 title: "Acelerando la repeticion de teclas en MacOS"
-date: 2024-02-03T11:53:44+01:00
+date: 2024-02-03
 draft: false
 categories: ["programming"]
 labels: ['macos', 'hacking', 'spanish', 'keyboard', 'keys']
