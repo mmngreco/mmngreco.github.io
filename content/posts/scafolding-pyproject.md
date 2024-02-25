@@ -6,7 +6,6 @@ categories: ["programming"]
 labels: ["python", "programming", "spanish"]
 ---
 
-## Scaffolding
 
 Basandome en mi anterior post sobre como crear proeyctos python minimalistas,
 me encontre copiando y pegando con bastante frecuencia y echaba de menos algo
@@ -16,6 +15,7 @@ sencillo.
 Me he puesto manos a la obra  con una prueba de concepto para ver si funciona.
 Lo primero es definir el punto de entrada que en mi caso va a ser este:
 
+## Scaffolding
 ```bash
 # Usage:
 # $ py-here name
@@ -25,6 +25,8 @@ py-here() {
     # TODO add more
 }
 ```
+
+## pyproject
 
 con eso ya tenemos un minimo bastante aceptable pero lo podemos mejorar si
 incluir el `pyproject.toml` a partir de template. He cogido el del post
@@ -60,6 +62,8 @@ ademas mantenerlo actualizado. Y luego haremos lo mismo con el
 [Makefile][make].
 
 
+## Testing
+
 Aqui una prueba de concepto:
 
 ```bash
@@ -86,6 +90,7 @@ yayay = "yayay:app"
 [tool.setuptools_scm]
 ```
 
+## Resultado
 
 y ahora veamos el resultado final. Para ello incluye esto en tu `.zshrc` o
 `.bashrc`:
@@ -103,8 +108,9 @@ py-here() {
     curl -L -s https://www.gitignore.io/api/python > ${name}/.gitignore
     cd ${name} && git init && git add . && git commit -m "add files"
 }
-
 ```
+
+## Como se ve
 
 abre una nueva consola y mira el resultado:
 
@@ -120,6 +126,9 @@ Initialized empty Git repository in /private/tmp/newProject/.git/
  create mode 100644 Makefile
  create mode 100644 newProject.py
  create mode 100644 pyproject.toml
+```
+
+```bash
 $ ls -la
 total 24
 drwxr-xr-x  12 mgreco  wheel   384B Feb 25 17:26 .git
@@ -129,6 +138,9 @@ drwxr-xr-x   2 mgreco  wheel    64B Feb 25 17:26 docs
 -rw-r--r--   1 mgreco  wheel     0B Feb 25 17:26 newProject.py
 -rw-r--r--   1 mgreco  wheel   473B Feb 25 17:26 pyproject.toml
 drwxr-xr-x   2 mgreco  wheel    64B Feb 25 17:26 tests
+```
+
+```bash
 $ cat pyproject.toml
 [build-system]
 requires = ["setuptools>=60", "setuptools-scm>=8.0"]
