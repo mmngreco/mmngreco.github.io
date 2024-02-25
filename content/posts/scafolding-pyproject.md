@@ -15,7 +15,7 @@ sencillo.
 Me he puesto manos a la obra  con una prueba de concepto para ver si funciona.
 Lo primero es definir el punto de entrada que en mi caso va a ser este:
 
-## Scaffolding
+## Punto de entrada
 ```bash
 # Usage:
 # $ py-here name
@@ -62,7 +62,7 @@ ademas mantenerlo actualizado. Y luego haremos lo mismo con el
 [Makefile][make].
 
 
-## Testing
+## Haciendo pruebas
 
 Aqui una prueba de concepto:
 
@@ -90,7 +90,7 @@ yayay = "yayay:app"
 [tool.setuptools_scm]
 ```
 
-## Resultado
+## Envolviendo todo en un comando
 
 y ahora veamos el resultado final. Para ello incluye esto en tu `.zshrc` o
 `.bashrc`:
@@ -110,7 +110,7 @@ py-here() {
 }
 ```
 
-## Como se ve
+## Y para terminar, asi es como se ve
 
 abre una nueva consola y mira el resultado:
 
