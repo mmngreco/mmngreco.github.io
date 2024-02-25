@@ -12,10 +12,11 @@ me encontre copiando y pegando con bastante frecuencia y echaba de menos algo
 que me permita hacer este trabajo (ya de por si bastante sencillo) algo mas
 sencillo.
 
+## Punto de entrada
+
 Me he puesto manos a la obra  con una prueba de concepto para ver si funciona.
 Lo primero es definir el punto de entrada que en mi caso va a ser este:
 
-## Punto de entrada
 ```bash
 # Usage:
 # $ py-here name
@@ -29,9 +30,9 @@ py-here() {
 ## pyproject
 
 con eso ya tenemos un minimo bastante aceptable pero lo podemos mejorar si
-incluir el `pyproject.toml` a partir de template. He cogido el del post
-anterior y lo he modificado incluyen la variable `$name` y poder convertirlo en
-un template.
+incluimos el `pyproject.toml` a partir de un template. He cogido el del post
+anterior y lo he modificado incluyendo la variable `$name` y poder convertirlo asi en
+un template al uso. 
 
 ```bash
 [build-system]
@@ -58,13 +59,13 @@ ${name} = "${name}:app"
 
 
 Esto lo voy a guardar en un [gist][gist] para poder traerlo de donde sea y
-ademas mantenerlo actualizado. Y luego haremos lo mismo con el
+ademas mantenerlo actualizado. Y luego haré lo mismo con el
 [Makefile][make].
 
 
 ## Haciendo pruebas
 
-Aqui una prueba de concepto:
+Aqui una prueba de concepto. Lanidea es probar que el `curl` funciona y consigo reemplazar la variable con `sed`. 
 
 ```bash
 $ name=yayay && curl -sSL https://gist.githubusercontent.com/mmngreco/2a371093fcb704fbff771e39479e75dc/raw/pyproject.toml  | sed "s/\${name}/${name}/g"
@@ -92,7 +93,7 @@ yayay = "yayay:app"
 
 ## Envolviendo todo en un comando
 
-y ahora veamos el resultado final. Para ello incluye esto en tu `.zshrc` o
+y ahora tenemos un comando que hace lo que quiero lo voy a envolver todo en la fumcion bash amterior y veamos el resultado final. Para ello incluye esto en tu `.zshrc` o
 `.bashrc`:
 
 ```bash
