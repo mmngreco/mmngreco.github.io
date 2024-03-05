@@ -25,3 +25,8 @@ the user is on **macOS** or **Linux**.
 
 As for `docker`, I won't get into the details of how poorly it works on macOS
 compared to Linux.
+
+
+The command `date` varies as well, of course! The Linux command
+`date -d '2024-02-04 14:00:36' +%s` must be adapted to
+`date -j -f "%Y-%m-%d %H:%M:%S" "2024-02-04 14:00:36" +%s` in macOS.
