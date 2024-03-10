@@ -6,14 +6,14 @@ categories: ["programming"]
 labels: ["python", "spanish", "pep"]
 ---
 
-## PEP-723
+En mi camino hacia el minimalismo, hoy he tenido la oportunidad de probar cómo
+funciona el [PEP-723][pep] y es bastante impresionante.
 
+El PEP-723 define una sintaxis para declarar las dependencias que un script
+Python necesita, permitiendo mantener todo definido en un único archivo.
 
-En mi camino por abrazar el minimalismo, hoy he podido probar como funciona el
-PEP-723 y mola bastante!
+Prueba esto, crea un archivo Python con el siguiente contenido:
 
-
-Prueba esto, crea un fichero python con el siguiente contenido:
 
 ```python
 # /// script
@@ -31,6 +31,9 @@ print("Testing PEP-723")
 print(df)
 ```
 
+> Nota: Observa el bloque de comentarios que define un script. Es básicamente
+> el mismo contenido que incluirías en tu `pyproject.toml`.
+
 a continuacion ejecuta:
 
 
@@ -45,3 +48,4 @@ pipx run /tmp/p.py
 Mola eh!
 
 
+[pep]: https://peps.python.org/pep-0723/
