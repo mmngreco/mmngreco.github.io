@@ -7,15 +7,18 @@ labels: ["python", "programming", "spanish"]
 ---
 
 
-Basandome en mi anterior post sobre como crear proeyctos python minimalistas,
-me encontre copiando y pegando con bastante frecuencia y echaba de menos algo
-que me permita hacer este trabajo (ya de por si bastante sencillo) algo mas
-sencillo.
+Basándome en mi [anterior post][prev-post] sobre cómo crear proyectos Python
+minimalistas, me encontré copiando y pegando con bastante frecuencia. Echaba de
+menos algo que me permitiera hacer este trabajo (que ya de por sí es bastante
+sencillo) aún más sencillo.
+
+[prev-post]: https://mmngreco.dev/posts/python-project-scratch/
 
 ## Punto de entrada
 
-Me he puesto manos a la obra  con una prueba de concepto para ver si funciona.
-Lo primero es definir el punto de entrada que en mi caso va a ser este:
+He comenzado a trabajar en una prueba de concepto para ver si funciona. Lo
+primero que debo hacer es definir el punto de entrada, que en mi caso será
+este:
 
 ```bash
 # Usage:
@@ -29,10 +32,10 @@ py-here() {
 
 ## pyproject
 
-con eso ya tenemos un minimo bastante aceptable pero lo podemos mejorar si
-incluimos el `pyproject.toml` a partir de un template. He cogido el del post
-anterior y lo he modificado incluyendo la variable `$name` y poder convertirlo asi en
-un template al uso. 
+Ya tenemos un mínimo bastante aceptable con eso, pero podemos mejorarlo si
+incluimos el `pyproject.toml` a partir de una plantilla. Tomé el del post
+anterior y lo modifiqué para incluir la variable `$name`, permitiendo así
+convertirlo en una plantilla de uso común.
 
 ```bash
 [build-system]
@@ -58,14 +61,14 @@ ${name} = "${name}:app"
 ```
 
 
-Esto lo voy a guardar en un [gist][gist] para poder traerlo de donde sea y
-ademas mantenerlo actualizado. Y luego haré lo mismo con el
-[Makefile][make].
+Voy a guardar esto en un [gist][gist] para poder accederlo desde cualquier
+lugar y mantenerlo actualizado. Después, haré lo mismo con el [Makefile][make].
 
 
 ## Haciendo pruebas
 
-Aqui una prueba de concepto. Lanidea es probar que el `curl` funciona y consigo reemplazar la variable con `sed`. 
+Aquí una prueba de concepto. La idea es probar que el `curl` funciona y consigo
+reemplazar la variable con `sed`.
 
 ```bash
 $ name=yayay && curl -sSL https://gist.githubusercontent.com/mmngreco/2a371093fcb704fbff771e39479e75dc/raw/pyproject.toml  | sed "s/\${name}/${name}/g"
@@ -93,8 +96,9 @@ yayay = "yayay:app"
 
 ## Envolviendo todo en un comando
 
-y ahora tenemos un comando que hace lo que quiero lo voy a envolver todo en la fumcion bash amterior y veamos el resultado final. Para ello incluye esto en tu `.zshrc` o
-`.bashrc`:
+Y ahora tenemos un comando que hace lo que quiero. Voy a envolver todo en la
+función bash anterior y veamos el resultado final. Para ello, incluye esto en
+tu `.zshrc` o `.bashrc`:
 
 ```bash
 # Usage:
@@ -113,7 +117,7 @@ py-here() {
 
 ## Y para terminar, asi es como se ve
 
-abre una nueva consola y mira el resultado:
+Abre una nueva consola y observa el resultado:
 
 ```bash
 $ py-here newProject
@@ -166,7 +170,7 @@ newProject = "newProject:app"
 ```
 
 
-Boom, Happy coding!
+Boom! Happy coding!
 
 
 [gist]: https://gist.githubusercontent.com/mmngreco/2a371093fcb704fbff771e39479e75dc/raw/pyproject.toml
