@@ -1,5 +1,5 @@
 ---
-title: "Probando pep-723 dependencias en un solo archivo"
+title: "PEP-723, definiendo dependencias en un sólo archivo"
 date: 2024-03-10
 draft: false
 categories: ["programming"]
