@@ -6,24 +6,23 @@ categories: ["programming"]
 labels: ["vim", "neovim", "spanish"]
 ---
 
-## El comando bang!
+## Explora el comando bang
 
-Esta joya de vim te permite acceder a todo el poder que tiene tus sitema,
-todas CLIs o programas que puedes acceder/usar desde tu terminal puedes tambien
-usarlas desde (neo)vim.
+Este aspecto de Vim aprovecha al máximo la capacidad de tu sistema. Cualquier
+interfaz de línea de comando o programa que se pueda activar o usar desde el
+terminal también se puede utilizar en (Neo)Vim.
 
 ```vim
 :help !
 ```
 
 
-Abre neovim y ejecuta estos ejemplos con los que puedes ir viendo un poco como
-funciona, pruebalos, modificalos:
+Inicia Neovim y prueba los ejemplos siguientes. Te ayudarán a entender su
+funcionamiento. Siente la libertad de experimentar con ellos y modificarlos
+según tus preferencias:
 
-> NOTA:
-> Se asume que esta en norma mode, por lo que `:` es ir a la line de comando de
-> (Neo)vim.
-
+> IMPORTANTE: Se supone que te encuentras en el modo normal, entonces `:` te
+> dirigirá a la línea de comandos de (Neo)Vim.
 
 ```vim
 :.!echo "hola, mundo!"
@@ -32,13 +31,13 @@ funciona, pruebalos, modificalos:
 :.!python -c "print('hola, python!')"
 ```
 
-Aqui un ejemplo mas intersante:
+Aquí un ejemplo más detallado:
 
 ```vim
 :.!curl https://api.github.com/users/mmngreco
 ```
 
-Aquí, tu buffer tendrá el siguiente contenido a partir de la línea actual:
+Aquí, el buffer contendrá el contenido a partir de la línea actual:
 
 
 ```json
@@ -79,7 +78,7 @@ Aquí, tu buffer tendrá el siguiente contenido a partir de la línea actual:
 ```
 
 
-Piensa "out of the box", tu imaginacion es el limite:
+Creatividad desatada: Tu imaginación es el límite.
 
 ```vim
 :.!curl https://api.github.com/users/mmngreco | jq '.type, .url'
