@@ -3,7 +3,7 @@ title: "Neovim for ML"
 date: 2024-03-17
 draft: false
 categories: ["programming"]
-labels: ["english", "machine-learning"]
+labels: ["english", "machine-learning", "neovim"]
 ---
 
 ## Neovim for ML
@@ -169,6 +169,9 @@ like.
 I hope you find this helpful. This same solution could potentially be used, but
 instead of working on a Python script, you would do so on a markdown or quarto
 file. It's all about trying out what works best for you.
+
+
+{{< youtube 9PuF36UNOjM >}}
 
 
 [ipyconfig]: https://ipython.readthedocs.io/en/stable/config/intro.html#example-configuration-file
