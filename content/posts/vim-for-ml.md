@@ -15,9 +15,9 @@ enjoyed it more and partly because it was an area I hadn't explored as much.
 After several years of using PyCharm/VSCode, I switched to NeoVim. There was
 quite the adaptation period, but now I don’t regret making the change at all.
 
-Notebooks are really handy, but they're also chaotic, nonlinear and
-comfortable. However, they are hard to maintain and take to production, not to
-mention checking for changes.
+Notebooks are undoubtedly handy, though they can be chaotic and nonlinear.
+Despite their convenience, they present challenges such as difficulty in
+maintenance, production adaptation, and change tracking.
 
 
 ## Neovim Plugins
