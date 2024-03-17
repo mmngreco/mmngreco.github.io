@@ -22,13 +22,14 @@ mention checking for changes.
 
 ## Neovim Plugins
 
-- jpalardy/vim-slime
-- jupytext
+- [jpalardy/vim-slime](https://github.com/jpalardy/vim-slime)
+- [goerz/jupytext.vim](https://github.com/goerz/jupytext.vim)
 
 ## Dependencias python
 
-- ipython
-- plotly
+- [IPython](https://ipython.org/)
+- [plotly](https://plotly.com/python/)
+- [pdbpp](https://github.com/pdbpp/pdbpp)
 
 
 ## Neovim Config
@@ -132,9 +133,9 @@ like a notebook, but in my opinion, it is more versatile.
 ## Workflow
 
 I open neovim, where I usually split the window. I place my Python script in
-one side, and on the other side, I open the terminal with iPython.
+one side, and on the other side, I open the terminal with `IPython`.
 
-I use slime to send commands from the script window to iPython. One of the
+I use slime to send commands from the script window to `IPython`. One of the
 biggest setbacks comes when viewing graphics. Matplotlib is pretty good, but
 managing the qt or gke windows can be tiresome. For this reason, I've switched
 to plotly, as it opens your graphics in the browser. This way, you have all
@@ -159,6 +160,16 @@ the full power of vim and my other plugins like ChatGPT, Copilot, CLIs, etc.
 The good thing is that, in the end, you have a much easier to maintain Python
 script.
 
+`IPython` brings a wealth of useful features to the table. For example, it
+enables the use of magic commands like `%run script.py`. But that's not all, it
+also provides the capability to [autoload scripts or dependencies][ipyconfig],
+making it a standout, dynamic tool. You can even [use rich][ipyrich], if you
+like.
+
 I hope you find this helpful. This same solution could potentially be used, but
 instead of working on a Python script, you would do so on a markdown or quarto
 file. It's all about trying out what works best for you.
+
+
+[ipyconfig]: https://ipython.readthedocs.io/en/stable/config/intro.html#example-configuration-file
+[ipyrich]: https://rich.readthedocs.io/en/stable/introduction.html#ipython-extension
