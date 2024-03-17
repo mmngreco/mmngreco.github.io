@@ -3,7 +3,7 @@ title: "Neovim for ML"
 date: 2024-03-17
 draft: false
 categories: ["programming"]
-labels: ["english", "machine-learning", "neovim"]
+labels: ["english", "machine-learning", "neovim", "python"]
 ---
 
 ## Neovim for ML
