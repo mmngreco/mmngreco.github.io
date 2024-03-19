@@ -174,5 +174,10 @@ file. It's all about trying out what works best for you.
 {{< youtube 9PuF36UNOjM >}}
 
 
+## Bonus
+
+- https://github.com/KikeM/vinyasa
+- https://github.com/mmngreco/dex
+
 [ipyconfig]: https://ipython.readthedocs.io/en/stable/config/intro.html#example-configuration-file
 [ipyrich]: https://rich.readthedocs.io/en/stable/introduction.html#ipython-extension
