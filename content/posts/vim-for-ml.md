@@ -25,7 +25,7 @@ maintenance, production adaptation, and change tracking.
 - [jpalardy/vim-slime](https://github.com/jpalardy/vim-slime)
 - [goerz/jupytext.vim](https://github.com/goerz/jupytext.vim)
 
-## Dependencias python
+## Python dependencies
 
 - [IPython](https://ipython.org/)
 - [plotly](https://plotly.com/python/)
