@@ -128,9 +128,9 @@ Esta solucion ya hace lo que quiero, solo falta incluir el symlink y alguna
 otras mejoras:
 
 
-- incluir el comando explicito `cs install`
-- añadir verbosidad
-- gestionar los binarios nuevos
+- Incluir el comando explícito `cx install`.
+- Añadir verbosidad.
+- Gestionar los binarios nuevos.
 
 
 ## Iteracion 2
