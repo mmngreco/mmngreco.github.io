@@ -8,13 +8,21 @@ labels: ["spanish", "python", "pipx", "conda", "macos" ]
 
 ## Contexto
 
-Soy un gran admirador de `pipx`, pero por alguna razón, no funciona tan bien en
-macOS como en Linux.
+Soy un gran fan y usuario de `pipx`, pero por alguna razón, no funciona tan
+bien en macOS como en Linux.
 
-Dada la funcionalidad útil que ofrece, he tenido que abandonar el uso de `brew`
-para su instalación y recurrir a `conda` en su lugar. Esto me permite controlar
-la versión de Python que `pipx` usa. De lo contrario, instalaría la última
-versión de Python, la cual algunos CLIs no soportan (como `duckdb`).
+La cosa es que uso `conda` (instalacion manual) y `pipx` (brew) muchas veces
+cuando tengo un entorno virual activado `pipx` se hace un lio y usa el entorno
+virtual incorrecto haciendo que el comando falle.
+
+
+Uno de los cambios que hice fue instalar `pipx` en un entorno conda en lugar de
+con `brew` y crear un alias para el binario, así ya no hay inconvenientes de
+entornos y variables. En general, funciona mejor; me permite controlar la
+versión de Python que usa `pipx` fácilmente (La variable de entorno
+`PIPX_DEFAULT_PYTHON` también me causa problemas en MacOS).
+Usando `brew` instala la última versión de Python, la cual algunos CLIs no
+soportan (como `duckdb`).
 
 Sin embargo, la situación no se limita a esto. Recientemente, me enfrenté al
 siguiente desafío:
@@ -35,21 +43,20 @@ $ vd
 zsh: /Users/mgreco/.local/bin/vd: bad interpreter: /Users/mgreco/Library/Application: no such file or directory
 ```
 
-Ya me siento bastante agotado de seguir creando soluciones provisionales para
-esto, siendo que debería funcionar de inmediato (supongo que alguna
-implementación inusual de macOS, impide que funcione correctamente).
+En este punto ya me he dado por vencido y no quiero seguir creando soluciones
+provisionales para esto, siendo que debería funcionar de inmediato (supongo que
+alguna implementación inusual de macOS, impide que funcione correctamente).
 
-## Solucion
+## Solución
 
-Lancé mi propia solución súper simple que utiliza lo que ya tengo instalado en
-mi sistema: `conda` y `pip`.
-
-La idea es sencilla: replicar la funcionalidad de `pipx install`, pero usando
-conda. Esto proporciona control sobre la versión de Python que deseas usar para
-cada entorno.
+Se me ocurrio replica lo que hago cuando quiero instalar un dependencia que
+`pipx` en MacOS falla y que consiste en usar `conda` para gestionar los
+entornos y `pip` para instalar dependencias. Es replicar la funcionalidad de
+`pipx install`, pero usando conda. Esto tiene alguna ventaja extra como que te
+permite controlar la versión de Python que deseas usar para cada entorno.
 
 Lo primero que hice fue definir cómo quiero usarlo, que es fácil si ya conoces
-`pipx`. Aquí te lo detallo:
+`pipx`:
 
 ```bash
 cx install black
@@ -57,7 +64,10 @@ cx install black -p 3.11
 cx install git+https://github.com/psf/black
 ```
 
-En términos más precisos, los pasos a seguir son los siguientes:
+
+> Nota: `cx` es como he llamado al comando `conda` + `pipx`.
+
+El proceso para crear un entorno sería algo como lo siguiente:
 
 1. Crear un entorno utilizando la versión deseada de Python.
 1. Instalar el paquete requerido en el entorno creado.
@@ -67,7 +77,7 @@ En términos más precisos, los pasos a seguir son los siguientes:
 
 ## Iteracion 0
 
-Lo que traducido de manera literal en bash, resultaría en algo similar a esto:
+Lo que traducido en bash, resultaría en algo similar a esto:
 
 ```bash
 dep=$1
@@ -77,15 +87,15 @@ ln -s ~/.cx/venvs/$dep/bin/$dep ~/.local/bin/$dep
 ```
 
 
-Encontraste rápidamente varios problemas con esta implementación. Algunos de
-estos son:
+Rápidamente verás varios problemas con esta implementación:
 
-1. Usar `dep` como nombre del entorno es poco común. Dep podría ser una URL.
-2. Necesitas parametrizar la versión de python.
+1. Usar `dep` como nombre del entorno es raro y poco conveniente. `dep` podría
+   ser una URL.
+2. Necesito parametrizar la versión de Python.
 3. ¿Qué sucede si el binario no tiene el mismo nombre que el paquete?
 
-Por tanto, decidiste cambiar a un script en python que te da un control más
-detallado de lo que deseas hacer.
+Por tanto, he cambiado a un script en python que te da un control más detallado
+de lo que deseas hacer.
 
 ## Iteracion 1
 
@@ -114,8 +124,13 @@ subprocess.call(conda_cmd, shell=True)
 subprocess.call(pip_cmd, shell=True)
 ```
 
-Esta solucion ya hace lo que quiero (salvo el symlink), solo falta incluir el
-symlink y alguna otras mejoras.
+Esta solucion ya hace lo que quiero, solo falta incluir el symlink y alguna
+otras mejoras:
+
+
+- incluir el comando explicito `cs install`
+- añadir verbosidad
+- gestionar los binarios nuevos
 
 
 ## Iteracion 2
@@ -154,11 +169,15 @@ print(new_binaries)
 ```
 
 
-Determinar qué binarios incluir en `~/.local/bin` es un poco complicado, pero
-funciona bien para lo que necesito y tiene espacio para mejorar.
+En esta iteracion he incluido una forma de determinar qué binarios incluir en
+`~/.local/bin` es bastante facil y funciona bien para lo que necesito pero
+tiene margen para mejorar, por ejemplo, seguramente este incluyendo binarios de
+las dependencias de los proyectos que estoy instalando.
 
-El problema con esta solución es que la salida de `new_binaries` es un conjunto
-vacío. Sucede que MacOS devuelve `False` en
+El **problema** con esta solución es que la salida de `new_binaries` es un conjunto
+vacío.
+
+Sucede que MacOS devuelve `False` en
 `Path(f"~/.cx/venvs/{name}/bin/").exists()`, pero si haces
 `Path(f"~/.cx/venvs/{name}/bin/").expanduser().exists()`, devuelve `True`.
 
@@ -243,6 +262,15 @@ for p in new_binaries:
 
 Esta es la solución final.
 
+
+Tiene varias mejoras:
+
+1. Incluye un parametro `force` para forzar el symlink
+1. Crea un alias para el binario
+1. Incluye un parametro `verbose` para mostrar el comando ejecutado
+
+Lo he juntado todo en un proyecto de GitHub, podria ser usado con `pipx run`
+pero en mi caso tengo el script en mi `~/.local/bin/cx`.
 
 Repo: https://github.com/mmngreco/cx
 
