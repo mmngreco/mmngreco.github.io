@@ -10,31 +10,30 @@ labels: ["spanish", "diagrams", "neovim", "dot", "ascii", "python"]
 ## Contexto
 
 Siempre he buscado una manera simple de incorporar diagramas directamente desde
-Neovim, pero nunca había encontrado una solución práctica. Eso cambió hoy.
+Neovim, pero nunca había encontrado una solución sencilla hasta hoy.
 
 Hasta ahora, no tenía un método sencillo para incluir diagramas, así que
-delegaba ese trabajo a documentación externa al código, usando Mermaid.
+delegaba ese trabajo a documentación externa al código, usando Mermaid. Aunque
+estaba satisfecho con los resultados, me preguntaba cómo podría hacerlo más
+simple. La respuesta vino justamente de mi experiencia con Mermaid.
 
-Ya que estoy muy satisfecho con los resultados, me preguntaba cómo podría
-hacerlo más simple. La respuesta vino de mi experiencia con Mermaid.
+Anteriormente, había probado soluciones como `asciiflow` o `venn.nvim`, pero
+implican más tiempo del que me gustaría y tomar muchas decisiones. ¿Cuánto
+espacio dejo entre cajas? ¿Cuánto texto debo dividir en varias líneas? ¿Cómo de
+largas deben ser las flechas? etc.
 
-Anteriormente, quería una forma fácil de dibujar diagramas, pero esto implica
-mucho trabajo y decisiones. ¿Cuánto espacio dejo entre cajas? ¿Cómo conecto
-todo manualmente? En fin...
-
-Había probado con `asciiflow` y otras soluciones similares (`venn.nvim`, etc.).
-
-Pero honestamente, no quiero tener que hacer el diagrama yo mismo. Prefiero
-hacer una descripción y que otra herramienta convierta eso a texto.
+Usando mermaid me di cuenta que lo que es potente es que no tengo que tomar
+ninguna desicion estetica (aunque es posible) sobre el diagram simplemente
+escribir el contenido y mermaid se encarga de darme un output excelente.
 
 Con este concepto en mente, inicié la exploración para crear un convertidor de
 Mermaid a ASCII, pero rápidamente me decanté por esta solución:
 
-https://github.com/ggerganov/dot-to-ascii
+👉 https://github.com/ggerganov/dot-to-ascii
 
-Esta solución implica escribir el diagrama en `dot` y convertirlo a ASCII.
-Realiza exactamente la misma función, está implementada y tiene API, ¿qué más
-se puede pedir?
+Basicamente esta solución implica escribir el diagrama en `dot` y convertirlo a
+ASCII. Realiza exactamente la misma función, está implementada y tiene API,
+¿qué más se puede pedir?
 
 
 ## Implementación
@@ -42,10 +41,10 @@ se puede pedir?
 Por lo tanto, empecé a implementar una solución para poder usarla desde Neovim:
 
 Tan solo necesitamos un script simple en Python que realice la solicitud por
-nosotros y un comando Lua que use este script para convertir el diagrama a
-ASCII.
+nosotros (en el propio proyecto nos dan uno script) y un comando Lua que haga
+uso de este script para convertir el diagrama a ASCII.
 
-```
+```python
 #!python3
 """
 Examples
@@ -96,7 +95,7 @@ if __name__ == '__main__':
     app()
 ```
 
-Y aqui el comando en `lua`:
+Y aqui el comando en `lua` para Neovim:
 
 ```lua
 -- this is wrapper to convert dot graph to ascii art using pipx and a gist
@@ -124,7 +123,8 @@ graph {
 ```
 
 
-Selecciono las lineas del diagrama y ejecut `Dot2Ascii` y este es el resultado:
+Seleccionando esas líneas del diagrama y ejecutando el comando `Dot2Ascii` que
+he creado, este es el resultado:
 
 ```
 ┌───┐     ┌───┐     ┌───┐
