@@ -23,6 +23,14 @@ add the following lines at the bottom:
   #page-header {
     display: none;
   }
+  .markdown-body {
+    background-color: #fff;
+    border: none;
+    color: none;
+  }
+  main {
+    background-color: #fff;
+  }
 }
 ```
 
