@@ -23,8 +23,7 @@ But, here's the hiccup: It’s not compatible with `conda`. And guess what I was
 using? Yep, `conda`. Ugh! So I jumped on the `venv` bandwagon, setting up
 Python 3.10, 3.11, 3.12 environments. And It works like a charm.
 
-Check out more about it here: [PIP Issue
-7902](https://github.com/pypa/pip/issues/7902).
+Check out more about it here: [PIP Issue 7902](https://github.com/pypa/pip/issues/7902).
 
 ## Hello, Rye!
 
@@ -38,8 +37,8 @@ However… and there’s always a “however”… 😅 I hit a few bumps, like 
 I’m still giving it a shot and testing it out. It’s got potential, but you
 know, new tools always come with a learning curve and their own set of quirks.
 
-For those curious, here's the rye bug tracker keeping my sanity in check: [Rye
-Issues](https://github.com/astral-sh/rye/issues?q=ModuleNotFoundError%3A+No+module+named+%27setuptools%27).
+For those curious, here's the rye bug tracker keeping my sanity in check:
+[Rye Issues](https://github.com/astral-sh/rye/issues?q=ModuleNotFoundError%3A+No+module+named+%27setuptools%27).
 
 ## Wrapping Up!
 
