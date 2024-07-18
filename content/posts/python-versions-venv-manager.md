@@ -19,11 +19,14 @@ accidently polluting your global Python environment when installing packages.
 It's like having an overprotective parent guard your environment from bad
 influences. Nice, right?
 
+Read this nice [SO question](https://stackoverflow.com/questions/17354852/how-to-make-sure-you-call-pip-only-in-virtualenv?rq=3).
+
 But, here's the hiccup: It’s not compatible with `conda`. And guess what I was
 using? Yep, `conda`. Ugh! So I jumped on the `venv` bandwagon, setting up
 Python 3.10, 3.11, 3.12 environments. And It works like a charm.
 
 Check out more about it here: [PIP Issue 7902](https://github.com/pypa/pip/issues/7902).
+
 
 ## Hello, Rye!
 
