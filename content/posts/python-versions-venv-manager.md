@@ -7,8 +7,6 @@ labels: ["english", "python", "venv"]
 ---
 
 
-Hey folks!
-
 Today, let's chat about something that has both delighted and frustrated me in equal measure: managing Python environments. You know how it is—sometimes you feel on top of the world, and other times, you want to launch your computer out the window. 🌍🚀💥
 
 ### The PIP_REQUIRE_VIRTUALENV Trick!
