@@ -2,7 +2,7 @@
 title: "Takt: A Simple and User-Friendly Time Tracker"
 date: 2023-08-27
 draft: false
-categories: ["programming"]
+categories: ["programming", "takt"]
 labels: ["hacking", "time-tracker", "cli", "takt", "hacking", "time", "terminal", "productivity", "time-management"]
 ---
 
