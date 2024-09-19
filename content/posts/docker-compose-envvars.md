@@ -17,6 +17,7 @@ Peekaboo!
 You think you're smart. You declare it confidently...
 
 ```bash
+$ cat compose.yml && docker compose run test 2> /dev/null  && docker compose down &> /dev/null
 services:
   test:
     image: alpine
@@ -31,6 +32,7 @@ Well, MYVAR decided to stay invisible. Maybe it's hiding under a digital rock?
 "Ah, I'll catch you with $$MYVAR!," you exclaim.
 
 ```bash
+$ cat compose.yml && docker compose run test 2> /dev/null  && docker compose down &> /dev/null
 services:
   test:
     image: alpine
@@ -46,6 +48,7 @@ get!
 “I got this! Let’s add a `sh -c` wrapper…”
 
 ```bash
+$ cat compose.yml && docker compose run test 2> /dev/null  && docker compose down &> /dev/null
 services:
   test:
     image: alpine
@@ -60,6 +63,7 @@ Nope. Still hiding. MYVAR seems to be a master of disguise.
 “$MYVAR, you can run but you can't hide from $$ and a `sh -c` wrapper!”
 
 ```bash
+$ cat compose.yml && docker compose run test 2> /dev/null  && docker compose down &> /dev/null
 services:
   test:
     image: alpine
