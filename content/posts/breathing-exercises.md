@@ -51,5 +51,10 @@ estado físico más **relajado** y mejorar el estado de ánimo.
   activamente su respiración.
 
 
+## Referenes
+
+- [Articulo][art]
+- [Paper][paper]
+
 [art]: https://www.washingtonpost.com/wellness/2023/03/16/breathing-exercises-mood-anxiety-brain/
 [paper]: https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(22)00474-8?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2666379122004748%3Fshowall%3Dtrue
